@@ -37,6 +37,7 @@
             this.toolbtnNewBus = new System.Windows.Forms.ToolStripMenuItem();
             this.toolbtnWorker = new System.Windows.Forms.ToolStripMenuItem();
             this.toolbtnVacation = new System.Windows.Forms.ToolStripMenuItem();
+            this.новыйМаршрутToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolbtnView = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolbtnReport = new System.Windows.Forms.ToolStripMenuItem();
             this.toolbtnAboutProduction = new System.Windows.Forms.ToolStripDropDownButton();
@@ -48,9 +49,11 @@
             this.lblVacation = new System.Windows.Forms.Label();
             this.lblWorker = new System.Windows.Forms.Label();
             this.lblBus = new System.Windows.Forms.Label();
+            this.ds = new Autopark.ds();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip
@@ -98,7 +101,8 @@
             this.toolbtnEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolbtnNewBus,
             this.toolbtnWorker,
-            this.toolbtnVacation});
+            this.toolbtnVacation,
+            this.новыйМаршрутToolStripMenuItem});
             this.toolbtnEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolbtnEdit.Image")));
             this.toolbtnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolbtnEdit.Name = "toolbtnEdit";
@@ -123,6 +127,12 @@
             this.toolbtnVacation.Name = "toolbtnVacation";
             this.toolbtnVacation.Size = new System.Drawing.Size(171, 22);
             this.toolbtnVacation.Text = "Новая должность";
+            // 
+            // новыйМаршрутToolStripMenuItem
+            // 
+            this.новыйМаршрутToolStripMenuItem.Name = "новыйМаршрутToolStripMenuItem";
+            this.новыйМаршрутToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.новыйМаршрутToolStripMenuItem.Text = "Новый маршрут";
             // 
             // toolbtnView
             // 
@@ -227,6 +237,11 @@
             this.lblBus.TabIndex = 3;
             this.lblBus.Text = "Автобусы";
             // 
+            // ds
+            // 
+            this.ds.DataSetName = "ds";
+            this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +259,7 @@
             this.statusStrip.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,6 +286,8 @@
         private System.Windows.Forms.Label lblBus;
         private System.Windows.Forms.ToolStripMenuItem toolbtnWorker;
         private System.Windows.Forms.ToolStripMenuItem toolbtnVacation;
+        private System.Windows.Forms.ToolStripMenuItem новыйМаршрутToolStripMenuItem;
+        private ds ds;
     }
 }
 

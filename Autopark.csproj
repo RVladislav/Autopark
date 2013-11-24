@@ -61,6 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB.cs" />
+    <Compile Include="ds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="forms\NewDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\NewDriver.Designer.cs">
+      <DependentUpon>NewDriver.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Help.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +91,12 @@
     <Compile Include="forms\NewBus.Designer.cs">
       <DependentUpon>NewBus.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\NewService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\NewService.Designer.cs">
+      <DependentUpon>NewService.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="forms\Report.cs">
@@ -95,6 +113,12 @@
     </Compile>
     <EmbeddedResource Include="forms\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\NewDriver.resx">
+      <DependentUpon>NewDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\NewService.resx">
+      <DependentUpon>NewService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
@@ -118,6 +142,17 @@
       <DependentUpon>welcome.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ds.xsc">
+      <DependentUpon>ds.xsd</DependentUpon>
+    </None>
+    <None Include="ds.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ds.xss">
+      <DependentUpon>ds.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

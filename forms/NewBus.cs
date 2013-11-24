@@ -18,9 +18,44 @@ namespace Autopark
 
         private void frmNewBus_Load(object sender, EventArgs e)
         {
-
+            // TODO: This line of code loads data into the 'ds.Bus' table. You can move, or remove it, as needed.
+            this.busTableAdapter.Fill(this.ds.Bus);
+            // TODO: This line of code loads data into the 'ds.Track' table. You can move, or remove it, as needed.
+            this.trackTableAdapter.Fill(this.ds.Track);
+            // TODO: This line of code loads data into the 'ds.All_drivers' table. You can move, or remove it, as needed.
+            this.all_driversTableAdapter.Fill(this.ds.All_drivers);
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmNewDriver frm = new frmNewDriver();
+            frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmNewService frm = new frmNewService();
+            frm.ShowDialog();
+        }
+
+        
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DB_functions fun = new DB_functions();
+            DB_functions.Fields_Bus f = new DB_functions.Fields_Bus();
+
+            f.f1 = txtNumber.Text;
+            f.f2 = cmbMark.Text;
+            f.f3 = cbTour.Checked;
+            f.f4 = cbNew.Checked;
+            f.f5 = int.Parse(txtSits.Text);
+
+            fun.Save(f);
+        }
+
+   
 
 
     }
