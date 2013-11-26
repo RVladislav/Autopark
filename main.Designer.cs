@@ -133,6 +133,7 @@
             this.новыйМаршрутToolStripMenuItem.Name = "новыйМаршрутToolStripMenuItem";
             this.новыйМаршрутToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.новыйМаршрутToolStripMenuItem.Text = "Новый маршрут";
+            this.новыйМаршрутToolStripMenuItem.Click += new System.EventHandler(this.новыйМаршрутToolStripMenuItem_Click);
             // 
             // toolbtnView
             // 

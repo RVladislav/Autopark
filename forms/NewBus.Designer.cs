@@ -135,6 +135,7 @@
             this.btnNewTrack.TabIndex = 13;
             this.btnNewTrack.Text = "+";
             this.btnNewTrack.UseVisualStyleBackColor = true;
+            this.btnNewTrack.Click += new System.EventHandler(this.btnNewTrack_Click);
             // 
             // btnNewDriver
             // 

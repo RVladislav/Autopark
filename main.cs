@@ -39,12 +39,11 @@ namespace Autopark
             frm.ShowDialog();
         }
 
-  
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void новыйМаршрутToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
-
+            frmNewTrack frm = new frmNewTrack();
+            frm.ShowDialog();
         }
 
        
