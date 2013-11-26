@@ -1,6 +1,6 @@
 ﻿namespace Autopark
 {
-    partial class frmNewDriver
+    partial class frmNewWorker
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFIO = new System.Windows.Forms.TextBox();
@@ -48,6 +49,13 @@
             this.chbManychildren = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtOthers = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.chbVacation = new System.Windows.Forms.ComboBox();
+            this.ds = new Autopark.ds();
+            this.vacationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vacationTableAdapter = new Autopark.dsTableAdapters.VacationTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vacationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -79,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 41);
+            this.label2.Location = new System.Drawing.Point(9, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 10;
@@ -88,7 +96,7 @@
             // dtpYearsold
             // 
             this.dtpYearsold.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpYearsold.Location = new System.Drawing.Point(107, 35);
+            this.dtpYearsold.Location = new System.Drawing.Point(132, 54);
             this.dtpYearsold.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
             this.dtpYearsold.Name = "dtpYearsold";
             this.dtpYearsold.Size = new System.Drawing.Size(150, 20);
@@ -97,7 +105,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 73);
+            this.label3.Location = new System.Drawing.Point(13, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 12;
@@ -105,7 +113,7 @@
             // 
             // txtWorkYears
             // 
-            this.txtWorkYears.Location = new System.Drawing.Point(107, 66);
+            this.txtWorkYears.Location = new System.Drawing.Point(132, 80);
             this.txtWorkYears.Name = "txtWorkYears";
             this.txtWorkYears.Size = new System.Drawing.Size(150, 20);
             this.txtWorkYears.TabIndex = 13;
@@ -230,11 +238,47 @@
             this.txtOthers.Size = new System.Drawing.Size(362, 68);
             this.txtOthers.TabIndex = 26;
             // 
-            // frmNewDriver
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 13);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Должность";
+            // 
+            // chbVacation
+            // 
+            this.chbVacation.DataSource = this.vacationBindingSource;
+            this.chbVacation.DisplayMember = "Name";
+            this.chbVacation.FormattingEnabled = true;
+            this.chbVacation.Location = new System.Drawing.Point(132, 28);
+            this.chbVacation.Name = "chbVacation";
+            this.chbVacation.Size = new System.Drawing.Size(176, 21);
+            this.chbVacation.TabIndex = 28;
+            this.chbVacation.ValueMember = "id";
+            // 
+            // ds
+            // 
+            this.ds.DataSetName = "ds";
+            this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vacationBindingSource
+            // 
+            this.vacationBindingSource.DataMember = "Vacation";
+            this.vacationBindingSource.DataSource = this.ds;
+            // 
+            // vacationTableAdapter
+            // 
+            this.vacationTableAdapter.ClearBeforeFill = true;
+            // 
+            // frmNewWorker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 518);
+            this.Controls.Add(this.chbVacation);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtOthers);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.chbManychildren);
@@ -256,8 +300,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmNewDriver";
-            this.Text = "Новый водитель";
+            this.Name = "frmNewWorker";
+            this.Text = "Новый работник";
+            this.Load += new System.EventHandler(this.frmNewWorker_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vacationBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +332,10 @@
         private System.Windows.Forms.CheckBox chbManychildren;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtOthers;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox chbVacation;
+        private ds ds;
+        private System.Windows.Forms.BindingSource vacationBindingSource;
+        private dsTableAdapters.VacationTableAdapter vacationTableAdapter;
     }
 }

@@ -29,7 +29,7 @@ namespace Autopark
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmNewDriver frm = new frmNewDriver();
+            frmNewWorker frm = new frmNewWorker();
             frm.ShowDialog();
         }
 

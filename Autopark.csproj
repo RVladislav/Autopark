@@ -67,11 +67,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ds.xsd</DependentUpon>
     </Compile>
-    <Compile Include="forms\NewDriver.cs">
+    <Compile Include="forms\NewWorker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\NewDriver.Designer.cs">
-      <DependentUpon>NewDriver.cs</DependentUpon>
+    <Compile Include="forms\NewWorker.Designer.cs">
+      <DependentUpon>NewWorker.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Help.cs">
       <SubType>Form</SubType>
@@ -103,6 +103,12 @@
     <Compile Include="forms\NewTrack.Designer.cs">
       <DependentUpon>NewTrack.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\NewVacation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\NewVacation.Designer.cs">
+      <DependentUpon>NewVacation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="forms\Report.cs">
@@ -120,8 +126,11 @@
     <EmbeddedResource Include="forms\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\NewDriver.resx">
-      <DependentUpon>NewDriver.cs</DependentUpon>
+    <EmbeddedResource Include="forms\NewVacation.resx">
+      <DependentUpon>NewVacation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\NewWorker.resx">
+      <DependentUpon>NewWorker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\NewService.resx">
       <DependentUpon>NewService.cs</DependentUpon>

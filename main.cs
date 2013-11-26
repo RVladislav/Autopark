@@ -46,6 +46,24 @@ namespace Autopark
             frm.ShowDialog();
         }
 
+        private void toolbtnWorker_Click(object sender, EventArgs e)
+        {
+            frmNewWorker frm = new frmNewWorker();
+            frm.ShowDialog();
+        }
+
+        private void новоеСервисноеОбслуживаниеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNewService frm = new frmNewService();
+            frm.ShowDialog();
+        }
+
+        private void toolbtnVacation_Click(object sender, EventArgs e)
+        {
+            frmNewVacation frm = new frmNewVacation();
+            frm.ShowDialog();
+        }
+
        
 
     }

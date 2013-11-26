@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Autopark
 {
-    public partial class frmNewDriver : Form
+    public partial class frmNewVacation : Form
     {
-        public frmNewDriver()
+        public frmNewVacation()
         {
             InitializeComponent();
         }

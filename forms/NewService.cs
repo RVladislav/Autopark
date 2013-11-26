@@ -29,13 +29,6 @@ namespace Autopark
 
         }
 
-
-
-        private void txtNumber_Click(object sender, EventArgs e)
-        {
-            txtNumber.Text = "";
-        }
-
      
     }
 }
