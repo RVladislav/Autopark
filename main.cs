@@ -133,7 +133,8 @@ namespace Autopark
                         //find = find.Remove(a, find.Count() - 1);
                         if (find == findIt)
                         {
-                            dgvMain.Rows[i].Cells[j].Style.BackColor = Color.Red;
+                            dgvMain.ClearSelection();
+                            dgvMain.Rows[i].Selected = true;
                         }
                     }
                 }
