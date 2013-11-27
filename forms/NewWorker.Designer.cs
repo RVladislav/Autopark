@@ -51,11 +51,12 @@
             this.txtOthers = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chbVacation = new System.Windows.Forms.ComboBox();
-            this.ds = new Autopark.ds();
             this.vacationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ds = new Autopark.ds();
             this.vacationTableAdapter = new Autopark.dsTableAdapters.VacationTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
+            this.btnNewVacation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vacationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -154,6 +155,7 @@
             this.cmbFamily.Name = "cmbFamily";
             this.cmbFamily.Size = new System.Drawing.Size(146, 21);
             this.cmbFamily.TabIndex = 17;
+            this.cmbFamily.Text = "Выберите";
             // 
             // label6
             // 
@@ -258,25 +260,36 @@
             this.chbVacation.TabIndex = 28;
             this.chbVacation.ValueMember = "id";
             // 
-            // ds
-            // 
-            this.ds.DataSetName = "ds";
-            this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // vacationBindingSource
             // 
             this.vacationBindingSource.DataMember = "Vacation";
             this.vacationBindingSource.DataSource = this.ds;
             // 
+            // ds
+            // 
+            this.ds.DataSetName = "ds";
+            this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // vacationTableAdapter
             // 
             this.vacationTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnNewVacation
+            // 
+            this.btnNewVacation.Location = new System.Drawing.Point(314, 28);
+            this.btnNewVacation.Name = "btnNewVacation";
+            this.btnNewVacation.Size = new System.Drawing.Size(21, 21);
+            this.btnNewVacation.TabIndex = 29;
+            this.btnNewVacation.Text = "+";
+            this.btnNewVacation.UseVisualStyleBackColor = true;
+            this.btnNewVacation.Click += new System.EventHandler(this.btnNewVacation_Click);
             // 
             // frmNewWorker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 518);
+            this.Controls.Add(this.btnNewVacation);
             this.Controls.Add(this.chbVacation);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtOthers);
@@ -303,8 +316,8 @@
             this.Name = "frmNewWorker";
             this.Text = "Новый работник";
             this.Load += new System.EventHandler(this.frmNewWorker_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vacationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,5 +350,6 @@
         private ds ds;
         private System.Windows.Forms.BindingSource vacationBindingSource;
         private dsTableAdapters.VacationTableAdapter vacationTableAdapter;
+        private System.Windows.Forms.Button btnNewVacation;
     }
 }

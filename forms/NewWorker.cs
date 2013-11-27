@@ -22,5 +22,11 @@ namespace Autopark
             this.vacationTableAdapter.Fill(this.ds.Vacation);
 
         }
+
+        private void btnNewVacation_Click(object sender, EventArgs e)
+        {
+            frmNewVacation frm = new frmNewVacation();
+            frm.ShowDialog();
+        }
     }
 }

@@ -37,24 +37,26 @@
             this.toolbtnWorker = new System.Windows.Forms.ToolStripMenuItem();
             this.toolbtnVacation = new System.Windows.Forms.ToolStripMenuItem();
             this.новыйМаршрутToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolbtnView = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolbtnReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.новоеСервисноеОбслуживаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolbtnAboutProduction = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolbtnHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toollblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblVacation = new System.Windows.Forms.Label();
             this.lblWorker = new System.Windows.Forms.Label();
             this.lblBus = new System.Windows.Forms.Label();
+            this.dgvMain = new System.Windows.Forms.DataGridView();
+            this.txtFind = new System.Windows.Forms.TextBox();
+            this.lblFind = new System.Windows.Forms.Label();
             this.ds = new Autopark.ds();
-            this.новоеСервисноеОбслуживаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +66,6 @@
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolbtnFile,
             this.toolbtnEdit,
-            this.toolbtnView,
             this.toolbtnAboutProduction});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
@@ -86,7 +87,7 @@
             // toolbtnExit
             // 
             this.toolbtnExit.Name = "toolbtnExit";
-            this.toolbtnExit.Size = new System.Drawing.Size(152, 22);
+            this.toolbtnExit.Size = new System.Drawing.Size(108, 22);
             this.toolbtnExit.Text = "Выход";
             this.toolbtnExit.Click += new System.EventHandler(this.toolbtnExit_Click);
             // 
@@ -133,23 +134,12 @@
             this.новыйМаршрутToolStripMenuItem.Text = "Новый маршрут";
             this.новыйМаршрутToolStripMenuItem.Click += new System.EventHandler(this.новыйМаршрутToolStripMenuItem_Click);
             // 
-            // toolbtnView
+            // новоеСервисноеОбслуживаниеToolStripMenuItem
             // 
-            this.toolbtnView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolbtnView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolbtnReport});
-            this.toolbtnView.Image = ((System.Drawing.Image)(resources.GetObject("toolbtnView.Image")));
-            this.toolbtnView.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolbtnView.Name = "toolbtnView";
-            this.toolbtnView.Size = new System.Drawing.Size(40, 22);
-            this.toolbtnView.Text = "Вид";
-            // 
-            // toolbtnReport
-            // 
-            this.toolbtnReport.Name = "toolbtnReport";
-            this.toolbtnReport.Size = new System.Drawing.Size(152, 22);
-            this.toolbtnReport.Text = "Отчёт";
-            this.toolbtnReport.Click += new System.EventHandler(this.toolbtnReport_Click);
+            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Name = "новоеСервисноеОбслуживаниеToolStripMenuItem";
+            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Text = "Новое ТО";
+            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Click += new System.EventHandler(this.новоеСервисноеОбслуживаниеToolStripMenuItem_Click);
             // 
             // toolbtnAboutProduction
             // 
@@ -165,7 +155,7 @@
             // toolbtnHelp
             // 
             this.toolbtnHelp.Name = "toolbtnHelp";
-            this.toolbtnHelp.Size = new System.Drawing.Size(152, 22);
+            this.toolbtnHelp.Size = new System.Drawing.Size(123, 22);
             this.toolbtnHelp.Text = "Помощь";
             this.toolbtnHelp.Click += new System.EventHandler(this.toolbtnHelp_Click);
             // 
@@ -208,47 +198,16 @@
             this.pnlMenu.Size = new System.Drawing.Size(167, 416);
             this.pnlMenu.TabIndex = 2;
             // 
-            // lblVacation
+            // label2
             // 
-            this.lblVacation.AutoSize = true;
-            this.lblVacation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblVacation.Location = new System.Drawing.Point(3, 88);
-            this.lblVacation.Name = "lblVacation";
-            this.lblVacation.Size = new System.Drawing.Size(112, 24);
-            this.lblVacation.TabIndex = 5;
-            this.lblVacation.Text = "Должности";
-            // 
-            // lblWorker
-            // 
-            this.lblWorker.AutoSize = true;
-            this.lblWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblWorker.Location = new System.Drawing.Point(3, 50);
-            this.lblWorker.Name = "lblWorker";
-            this.lblWorker.Size = new System.Drawing.Size(106, 24);
-            this.lblWorker.TabIndex = 4;
-            this.lblWorker.Text = "Работники";
-            // 
-            // lblBus
-            // 
-            this.lblBus.AutoSize = true;
-            this.lblBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblBus.Location = new System.Drawing.Point(3, 12);
-            this.lblBus.Name = "lblBus";
-            this.lblBus.Size = new System.Drawing.Size(98, 24);
-            this.lblBus.TabIndex = 3;
-            this.lblBus.Text = "Автобусы";
-            // 
-            // ds
-            // 
-            this.ds.DataSetName = "ds";
-            this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // новоеСервисноеОбслуживаниеToolStripMenuItem
-            // 
-            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Name = "новоеСервисноеОбслуживаниеToolStripMenuItem";
-            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Text = "Новое ТО";
-            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Click += new System.EventHandler(this.новоеСервисноеОбслуживаниеToolStripMenuItem_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(3, 164);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 24);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "ТО на автобусы";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -259,22 +218,90 @@
             this.label1.Size = new System.Drawing.Size(104, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "Маршруты";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lblVacation
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(3, 164);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 24);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "ТО на автобусы";
+            this.lblVacation.AutoSize = true;
+            this.lblVacation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblVacation.Location = new System.Drawing.Point(3, 88);
+            this.lblVacation.Name = "lblVacation";
+            this.lblVacation.Size = new System.Drawing.Size(112, 24);
+            this.lblVacation.TabIndex = 5;
+            this.lblVacation.Text = "Должности";
+            this.lblVacation.Click += new System.EventHandler(this.lblVacation_Click);
+            // 
+            // lblWorker
+            // 
+            this.lblWorker.AutoSize = true;
+            this.lblWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblWorker.Location = new System.Drawing.Point(3, 50);
+            this.lblWorker.Name = "lblWorker";
+            this.lblWorker.Size = new System.Drawing.Size(106, 24);
+            this.lblWorker.TabIndex = 4;
+            this.lblWorker.Text = "Работники";
+            this.lblWorker.Click += new System.EventHandler(this.lblWorker_Click);
+            // 
+            // lblBus
+            // 
+            this.lblBus.AutoSize = true;
+            this.lblBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblBus.Location = new System.Drawing.Point(3, 12);
+            this.lblBus.Name = "lblBus";
+            this.lblBus.Size = new System.Drawing.Size(98, 24);
+            this.lblBus.TabIndex = 3;
+            this.lblBus.Text = "Автобусы";
+            this.lblBus.Click += new System.EventHandler(this.lblBus_Click);
+            // 
+            // dgvMain
+            // 
+            this.dgvMain.AllowUserToAddRows = false;
+            this.dgvMain.AllowUserToDeleteRows = false;
+            this.dgvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMain.Location = new System.Drawing.Point(173, 26);
+            this.dgvMain.Name = "dgvMain";
+            this.dgvMain.ReadOnly = true;
+            this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMain.Size = new System.Drawing.Size(612, 412);
+            this.dgvMain.TabIndex = 3;
+            this.dgvMain.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellContentDoubleClick);
+            this.dgvMain.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvMain_DataBindingComplete);
+            // 
+            // txtFind
+            // 
+            this.txtFind.Location = new System.Drawing.Point(606, 3);
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(179, 20);
+            this.txtFind.TabIndex = 4;
+            this.txtFind.TextChanged += new System.EventHandler(this.txtFind_TextChanged);
+            // 
+            // lblFind
+            // 
+            this.lblFind.AutoSize = true;
+            this.lblFind.Location = new System.Drawing.Point(562, 6);
+            this.lblFind.Name = "lblFind";
+            this.lblFind.Size = new System.Drawing.Size(38, 13);
+            this.lblFind.TabIndex = 5;
+            this.lblFind.Text = "Найти";
+            // 
+            // ds
+            // 
+            this.ds.DataSetName = "ds";
+            this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 462);
+            this.Controls.Add(this.lblFind);
+            this.Controls.Add(this.txtFind);
+            this.Controls.Add(this.dgvMain);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
@@ -286,6 +313,7 @@
             this.statusStrip.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -299,8 +327,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolbtnExit;
         private System.Windows.Forms.ToolStripDropDownButton toolbtnEdit;
         private System.Windows.Forms.ToolStripMenuItem toolbtnNewBus;
-        private System.Windows.Forms.ToolStripDropDownButton toolbtnView;
-        private System.Windows.Forms.ToolStripMenuItem toolbtnReport;
         private System.Windows.Forms.ToolStripDropDownButton toolbtnAboutProduction;
         private System.Windows.Forms.ToolStripMenuItem toolbtnHelp;
         private System.Windows.Forms.StatusStrip statusStrip;
@@ -317,6 +343,9 @@
         private System.Windows.Forms.ToolStripMenuItem новоеСервисноеОбслуживаниеToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvMain;
+        private System.Windows.Forms.TextBox txtFind;
+        private System.Windows.Forms.Label lblFind;
     }
 }
 
