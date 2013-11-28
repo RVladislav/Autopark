@@ -36,7 +36,17 @@ namespace Autopark
             public DateTime f10;
             public bool f11;
         }
-        
+
+        public struct Fields_Track
+        {
+            public string f1;
+            public string f2;
+            public int f3;
+            public bool f4;
+            public DateTime f5;
+            public bool f6;
+        }
+
         public void Save(Fields_Bus fields)
         {
            using (OleDbConnection con = new OleDbConnection(connectionString))
@@ -49,11 +59,8 @@ namespace Autopark
                 cmd.Parameters.AddWithValue("@tour", fields.f3);
                 cmd.Parameters.AddWithValue("@new", fields.f4);
                 cmd.Parameters.AddWithValue("@sits", fields.f5);
-                
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-                con.Dispose();
+
+                RunQuery(con, cmd);
             } 
         }
 
@@ -77,12 +84,36 @@ namespace Autopark
                 cmd.Parameters.AddWithValue("@Time", fields.f10);
                 cmd.Parameters.AddWithValue("@Done", fields.f11);
 
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-                con.Dispose();
+                RunQuery(con, cmd);
 
             }
+        }
+
+        public void Save(Fields_Track fields)
+        {
+            using (OleDbConnection con = new OleDbConnection(connectionString))
+            {
+                OleDbCommand cmd = new OleDbCommand("AddTrack", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Description", fields.f1);
+                cmd.Parameters.AddWithValue("@stops", fields.f2);
+                cmd.Parameters.AddWithValue("@time", fields.f3);
+                cmd.Parameters.AddWithValue("@city", fields.f4);
+                cmd.Parameters.AddWithValue("@timeCreate", fields.f5);
+                cmd.Parameters.AddWithValue("@Done", fields.f6);
+
+                RunQuery(con, cmd);               
+
+            }
+        }
+
+        private void RunQuery(OleDbConnection con, OleDbCommand cmd)
+        {
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+            con.Dispose(); 
         }
 
     }

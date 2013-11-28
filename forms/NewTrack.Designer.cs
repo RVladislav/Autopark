@@ -37,7 +37,7 @@
             this.txtTime = new System.Windows.Forms.TextBox();
             this.chbCity = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpCreate = new System.Windows.Forms.DateTimePicker();
             this.chbDone = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -50,6 +50,7 @@
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -119,13 +120,13 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Дата создания";
             // 
-            // dateTimePicker1
+            // dtpCreate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(99, 220);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dtpCreate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpCreate.Location = new System.Drawing.Point(99, 220);
+            this.dtpCreate.Name = "dtpCreate";
+            this.dtpCreate.Size = new System.Drawing.Size(138, 20);
+            this.dtpCreate.TabIndex = 9;
             // 
             // chbDone
             // 
@@ -143,7 +144,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 330);
             this.Controls.Add(this.chbDone);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpCreate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chbCity);
             this.Controls.Add(this.txtTime);
@@ -172,7 +173,7 @@
         private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.CheckBox chbCity;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpCreate;
         private System.Windows.Forms.CheckBox chbDone;
     }
 }

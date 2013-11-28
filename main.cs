@@ -112,8 +112,7 @@ namespace Autopark
 
         private void dgvMain_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmReport frm = new frmReport();
-            frm.ShowDialog();
+            
         }
 
         private void txtFind_TextChanged(object sender, EventArgs e)
