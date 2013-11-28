@@ -15,5 +15,29 @@ namespace Autopark
         {
             InitializeComponent();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DB_functions fun = new DB_functions();
+                DB_functions.Fields_Vacation fields = new DB_functions.Fields_Vacation();
+
+                fields.f1 = txtName.Text;
+                fields.f2 = txtDescription.Text;
+                fields.f3 = txtDescriptionFull.Text;
+                fields.f4 = txtRequriments.Text;
+                fields.f5 = int.Parse(txtMoney.Text);
+                fields.f6 = chbOffice.Checked;
+
+                fun.Save(fields);
+                this.Close();
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Невозможно сохранить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }

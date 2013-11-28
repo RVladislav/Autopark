@@ -47,6 +47,7 @@ namespace Autopark
             {
                 DB_functions fun = new DB_functions();
                 DB_functions.Fields_Bus fields = new DB_functions.Fields_Bus();
+                DB_functions.Link_BusTrack bt = new DB_functions.Link_BusTrack();
 
                 fields.f1 = txtNumber.Text;
                 fields.f2 = cmbMark.Text;
@@ -54,7 +55,11 @@ namespace Autopark
                 fields.f4 = cbNew.Checked;
                 fields.f5 = int.Parse(txtSits.Text);
 
+                bt.f1 = ds.Bus.Rows.Count + 1;
+                bt.f2 = int.Parse(cmbTrack.ValueMember.ToString());//Проверить!!!!!
+
                 fun.Save(fields);
+                fun.Save(bt);
                 this.Close();
             }
             catch (Exception E)

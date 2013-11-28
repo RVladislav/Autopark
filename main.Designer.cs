@@ -53,6 +53,9 @@
             this.txtFind = new System.Windows.Forms.TextBox();
             this.lblFind = new System.Windows.Forms.Label();
             this.ds = new Autopark.ds();
+            this.tooDGVEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.классическийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -66,6 +69,7 @@
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolbtnFile,
             this.toolbtnEdit,
+            this.toolStripDropDownButton1,
             this.toolbtnAboutProduction});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
@@ -87,7 +91,7 @@
             // toolbtnExit
             // 
             this.toolbtnExit.Name = "toolbtnExit";
-            this.toolbtnExit.Size = new System.Drawing.Size(108, 22);
+            this.toolbtnExit.Size = new System.Drawing.Size(152, 22);
             this.toolbtnExit.Text = "Выход";
             this.toolbtnExit.Click += new System.EventHandler(this.toolbtnExit_Click);
             // 
@@ -99,7 +103,8 @@
             this.toolbtnWorker,
             this.toolbtnVacation,
             this.новыйМаршрутToolStripMenuItem,
-            this.новоеСервисноеОбслуживаниеToolStripMenuItem});
+            this.новоеСервисноеОбслуживаниеToolStripMenuItem,
+            this.tooDGVEdit});
             this.toolbtnEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolbtnEdit.Image")));
             this.toolbtnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolbtnEdit.Name = "toolbtnEdit";
@@ -109,35 +114,35 @@
             // toolbtnNewBus
             // 
             this.toolbtnNewBus.Name = "toolbtnNewBus";
-            this.toolbtnNewBus.Size = new System.Drawing.Size(171, 22);
+            this.toolbtnNewBus.Size = new System.Drawing.Size(176, 22);
             this.toolbtnNewBus.Text = "Новый автобус";
             this.toolbtnNewBus.Click += new System.EventHandler(this.toolbtnNewBus_Click);
             // 
             // toolbtnWorker
             // 
             this.toolbtnWorker.Name = "toolbtnWorker";
-            this.toolbtnWorker.Size = new System.Drawing.Size(171, 22);
+            this.toolbtnWorker.Size = new System.Drawing.Size(176, 22);
             this.toolbtnWorker.Text = "Новый работник";
             this.toolbtnWorker.Click += new System.EventHandler(this.toolbtnWorker_Click);
             // 
             // toolbtnVacation
             // 
             this.toolbtnVacation.Name = "toolbtnVacation";
-            this.toolbtnVacation.Size = new System.Drawing.Size(171, 22);
+            this.toolbtnVacation.Size = new System.Drawing.Size(176, 22);
             this.toolbtnVacation.Text = "Новая должность";
             this.toolbtnVacation.Click += new System.EventHandler(this.toolbtnVacation_Click);
             // 
             // новыйМаршрутToolStripMenuItem
             // 
             this.новыйМаршрутToolStripMenuItem.Name = "новыйМаршрутToolStripMenuItem";
-            this.новыйМаршрутToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.новыйМаршрутToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.новыйМаршрутToolStripMenuItem.Text = "Новый маршрут";
             this.новыйМаршрутToolStripMenuItem.Click += new System.EventHandler(this.новыйМаршрутToolStripMenuItem_Click);
             // 
             // новоеСервисноеОбслуживаниеToolStripMenuItem
             // 
             this.новоеСервисноеОбслуживаниеToolStripMenuItem.Name = "новоеСервисноеОбслуживаниеToolStripMenuItem";
-            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.новоеСервисноеОбслуживаниеToolStripMenuItem.Text = "Новое ТО";
             this.новоеСервисноеОбслуживаниеToolStripMenuItem.Click += new System.EventHandler(this.новоеСервисноеОбслуживаниеToolStripMenuItem_Click);
             // 
@@ -257,9 +262,9 @@
             // 
             this.dgvMain.AllowUserToAddRows = false;
             this.dgvMain.AllowUserToDeleteRows = false;
-            this.dgvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -293,6 +298,30 @@
             // 
             this.ds.DataSetName = "ds";
             this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tooDGVEdit
+            // 
+            this.tooDGVEdit.Name = "tooDGVEdit";
+            this.tooDGVEdit.Size = new System.Drawing.Size(176, 22);
+            this.tooDGVEdit.Text = "Правка элементов";
+            this.tooDGVEdit.Click += new System.EventHandler(this.правкаЭлементовToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.классическийToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(48, 22);
+            this.toolStripDropDownButton1.Text = "Скин";
+            // 
+            // классическийToolStripMenuItem
+            // 
+            this.классическийToolStripMenuItem.Name = "классическийToolStripMenuItem";
+            this.классическийToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.классическийToolStripMenuItem.Text = "Классический";
             // 
             // frmMain
             // 
@@ -347,6 +376,9 @@
         private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Label lblFind;
         private System.Windows.Forms.DataGridView dgvMain;
+        private System.Windows.Forms.ToolStripMenuItem tooDGVEdit;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem классическийToolStripMenuItem;
     }
 }
 

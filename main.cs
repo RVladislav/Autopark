@@ -142,5 +142,22 @@ namespace Autopark
             {
             }
         }
+
+        private void правкаЭлементовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Проверить!!!
+            if (dgvMain.ReadOnly == true)
+            {
+                dgvMain.ReadOnly = false;
+                tooDGVEdit.Text = "♦ Правка элементов ♦";
+            }
+            else
+            {
+                dgvMain.ReadOnly = true;
+                tooDGVEdit.Text = "Правка элементов";
+            }
+
+            dgvMain.Update();
+        }
     }
 }

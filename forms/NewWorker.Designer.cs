@@ -55,6 +55,7 @@
             this.ds = new Autopark.ds();
             this.vacationTableAdapter = new Autopark.dsTableAdapters.VacationTableAdapter();
             this.btnNewVacation = new System.Windows.Forms.Button();
+            this.chbCar = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.vacationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +69,7 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -160,7 +162,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 275);
+            this.label6.Location = new System.Drawing.Point(12, 255);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 18;
@@ -168,7 +170,7 @@
             // 
             // txtHobbies
             // 
-            this.txtHobbies.Location = new System.Drawing.Point(12, 291);
+            this.txtHobbies.Location = new System.Drawing.Point(12, 279);
             this.txtHobbies.Multiline = true;
             this.txtHobbies.Name = "txtHobbies";
             this.txtHobbies.Size = new System.Drawing.Size(362, 68);
@@ -177,7 +179,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 181);
+            this.label7.Location = new System.Drawing.Point(12, 167);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 13);
             this.label7.TabIndex = 20;
@@ -186,7 +188,7 @@
             // chbVeter
             // 
             this.chbVeter.AutoSize = true;
-            this.chbVeter.Location = new System.Drawing.Point(84, 181);
+            this.chbVeter.Location = new System.Drawing.Point(84, 167);
             this.chbVeter.Name = "chbVeter";
             this.chbVeter.Size = new System.Drawing.Size(68, 17);
             this.chbVeter.TabIndex = 21;
@@ -196,7 +198,7 @@
             // chbOne
             // 
             this.chbOne.AutoSize = true;
-            this.chbOne.Location = new System.Drawing.Point(84, 204);
+            this.chbOne.Location = new System.Drawing.Point(84, 190);
             this.chbOne.Name = "chbOne";
             this.chbOne.Size = new System.Drawing.Size(62, 17);
             this.chbOne.TabIndex = 22;
@@ -206,7 +208,7 @@
             // chbDisability
             // 
             this.chbDisability.AutoSize = true;
-            this.chbDisability.Location = new System.Drawing.Point(84, 227);
+            this.chbDisability.Location = new System.Drawing.Point(84, 213);
             this.chbDisability.Name = "chbDisability";
             this.chbDisability.Size = new System.Drawing.Size(70, 17);
             this.chbDisability.TabIndex = 23;
@@ -216,7 +218,7 @@
             // chbManychildren
             // 
             this.chbManychildren.AutoSize = true;
-            this.chbManychildren.Location = new System.Drawing.Point(84, 250);
+            this.chbManychildren.Location = new System.Drawing.Point(84, 236);
             this.chbManychildren.Name = "chbManychildren";
             this.chbManychildren.Size = new System.Drawing.Size(128, 17);
             this.chbManychildren.TabIndex = 24;
@@ -226,7 +228,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 375);
+            this.label8.Location = new System.Drawing.Point(12, 351);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 25;
@@ -234,7 +236,7 @@
             // 
             // txtOthers
             // 
-            this.txtOthers.Location = new System.Drawing.Point(12, 391);
+            this.txtOthers.Location = new System.Drawing.Point(12, 371);
             this.txtOthers.Multiline = true;
             this.txtOthers.Name = "txtOthers";
             this.txtOthers.Size = new System.Drawing.Size(362, 68);
@@ -284,11 +286,22 @@
             this.btnNewVacation.UseVisualStyleBackColor = true;
             this.btnNewVacation.Click += new System.EventHandler(this.btnNewVacation_Click);
             // 
+            // chbCar
+            // 
+            this.chbCar.AutoSize = true;
+            this.chbCar.Location = new System.Drawing.Point(12, 445);
+            this.chbCar.Name = "chbCar";
+            this.chbCar.Size = new System.Drawing.Size(133, 17);
+            this.chbCar.TabIndex = 30;
+            this.chbCar.Text = "Наличие автомобиля";
+            this.chbCar.UseVisualStyleBackColor = true;
+            // 
             // frmNewWorker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 518);
+            this.Controls.Add(this.chbCar);
             this.Controls.Add(this.btnNewVacation);
             this.Controls.Add(this.chbVacation);
             this.Controls.Add(this.label9);
@@ -351,5 +364,6 @@
         private System.Windows.Forms.BindingSource vacationBindingSource;
         private dsTableAdapters.VacationTableAdapter vacationTableAdapter;
         private System.Windows.Forms.Button btnNewVacation;
+        private System.Windows.Forms.CheckBox chbCar;
     }
 }

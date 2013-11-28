@@ -12,6 +12,12 @@ namespace Autopark
     {
         string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\db\Database.accdb;Persist Security Info=True";
 
+        public struct Link_BusTrack
+        {
+            public int f1;
+            public int f2;
+        }
+
         public struct Fields_Bus
         {
             public string f1;
@@ -47,6 +53,32 @@ namespace Autopark
             public bool f6;
         }
 
+        public struct Fields_Worker
+        {
+            public string f1;
+            public DateTime f2;
+            public int f3;
+            public string f4;
+            public string f5;
+            public string f6;
+            public bool f7;
+            public bool f8;
+            public bool f9;
+            public bool f10;
+            public bool f11;
+            public string f12;
+        }
+
+        public struct Fields_Vacation
+        {
+            public string f1;
+            public string f2;
+            public string f3;
+            public string f4;
+            public int f5;//Поменять формат в таблице!!!
+            public bool f6;
+        }
+
         public void Save(Fields_Bus fields)
         {
            using (OleDbConnection con = new OleDbConnection(connectionString))
@@ -62,6 +94,30 @@ namespace Autopark
 
                 RunQuery(con, cmd);
             } 
+        }
+
+        public void Save(Link_BusTrack bt)
+        {
+
+        }
+
+        public void Save(Fields_Vacation fields)
+        {
+            using (OleDbConnection con = new OleDbConnection(connectionString))
+            {
+                OleDbCommand cmd = new OleDbCommand("AddVacation", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Name", fields.f1);
+                cmd.Parameters.AddWithValue("@Description", fields.f2);
+                cmd.Parameters.AddWithValue("@requirements", fields.f3);
+                cmd.Parameters.AddWithValue("@FullD", fields.f4);
+                cmd.Parameters.AddWithValue("@minMoney", fields.f5);
+                cmd.Parameters.AddWithValue("@inOffice", fields.f6);
+
+                RunQuery(con, cmd);
+
+            }
         }
 
         public void Save(Fields_Service fields)
@@ -86,6 +142,30 @@ namespace Autopark
 
                 RunQuery(con, cmd);
 
+            }
+        }
+
+        public void Save(Fields_Worker fields)
+        {
+            using (OleDbConnection con = new OleDbConnection(connectionString))
+            {
+                OleDbCommand cmd = new OleDbCommand("AddWorker", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@fio", fields.f1);
+                cmd.Parameters.AddWithValue("@years_old", fields.f2);
+                cmd.Parameters.AddWithValue("@work_year", fields.f3);
+                cmd.Parameters.AddWithValue("@tel", fields.f4);
+                cmd.Parameters.AddWithValue("@family", fields.f5);
+                cmd.Parameters.AddWithValue("@hobbies", fields.f6);
+                cmd.Parameters.AddWithValue("@veteran", fields.f7);
+                cmd.Parameters.AddWithValue("@one", fields.f8);
+                cmd.Parameters.AddWithValue("@diss", fields.f9);
+                cmd.Parameters.AddWithValue("@many", fields.f10);
+                cmd.Parameters.AddWithValue("@car", fields.f11);
+                cmd.Parameters.AddWithValue("@other", fields.f12);
+
+                RunQuery(con, cmd);
             }
         }
 
