@@ -142,6 +142,18 @@
     <Compile Include="forms\welcome.Designer.cs">
       <DependentUpon>welcome.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\SetDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SetDriver.Designer.cs">
+      <DependentUpon>SetDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SetVacantion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SetVacantion.Designer.cs">
+      <DependentUpon>SetVacantion.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="forms\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\NewTrack.resx">
       <DependentUpon>NewTrack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SetDriver.resx">
+      <DependentUpon>SetDriver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
@@ -177,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\welcome.resx">
       <DependentUpon>welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SetVacantion.resx">
+      <DependentUpon>SetVacantion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Autopark_TemporaryKey.pfx" />

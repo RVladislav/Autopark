@@ -250,5 +250,17 @@ namespace Autopark
             frm.dgvAdmin.Update();
             frm.ShowDialog();
         }
+
+        private void назначитьВодителяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSetDriver frm = new frmSetDriver();
+            frm.ShowDialog();
+        }
+
+        private void назначитьНаДолжностьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSetVacantion frm = new frmSetVacantion();
+            frm.ShowDialog();
+        }
     }
 }

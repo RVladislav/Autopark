@@ -27,6 +27,12 @@ namespace Autopark
             public int f5;
         }
 
+        public struct LinkVacantion
+        {
+            public int f1;
+            public int f2;
+        }
+
         public struct Fields_Service
         {
             public int f0;
@@ -105,6 +111,21 @@ namespace Autopark
 
                 cmd.Parameters.AddWithValue("@idB", bt.f1);
                 cmd.Parameters.AddWithValue("@idT", bt.f2);
+
+                RunQuery(con, cmd);
+
+            }
+        }
+
+        public void Save(LinkVacantion lv)
+        {
+            using (OleDbConnection con = new OleDbConnection(connectionString))
+            {
+                OleDbCommand cmd = new OleDbCommand("AddWV", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idW", lv.f1);
+                cmd.Parameters.AddWithValue("@idV", lv.f2);
 
                 RunQuery(con, cmd);
 

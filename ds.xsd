@@ -539,17 +539,18 @@
               <DbSource ConnectionRef="cs (Settings)" DbObjectName="All drivers" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT id, fio, [number], mark FROM [All drivers]</CommandText>
+                    <CommandText>SELECT [Worker.id], fio, [number], mark, [Bus.id] FROM [All drivers]</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="Worker.id" DataSetColumn="Worker_id" />
               <Mapping SourceColumn="fio" DataSetColumn="fio" />
               <Mapping SourceColumn="number" DataSetColumn="number" />
               <Mapping SourceColumn="mark" DataSetColumn="mark" />
+              <Mapping SourceColumn="Bus.id" DataSetColumn="Bus_id" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -681,7 +682,7 @@
   <xs:element name="ds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ds" msprop:Generator_UserDSName="ds">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="B-T" msprop:Generator_TableClassName="_B_TDataTable" msprop:Generator_TableVarName="_tableB_T" msprop:Generator_RowChangedName="_B_TRowChanged" msprop:Generator_TablePropName="_B_T" msprop:Generator_RowDeletingName="_B_TRowDeleting" msprop:Generator_RowChangingName="_B_TRowChanging" msprop:Generator_RowEvHandlerName="_B_TRowChangeEventHandler" msprop:Generator_RowDeletedName="_B_TRowDeleted" msprop:Generator_RowClassName="_B_TRow" msprop:Generator_UserTableName="B-T" msprop:Generator_RowEvArgName="_B_TRowChangeEvent">
+        <xs:element name="B-T" msprop:Generator_TableClassName="_B_TDataTable" msprop:Generator_TableVarName="_tableB_T" msprop:Generator_TablePropName="_B_T" msprop:Generator_RowDeletingName="_B_TRowDeleting" msprop:Generator_RowChangingName="_B_TRowChanging" msprop:Generator_RowEvHandlerName="_B_TRowChangeEventHandler" msprop:Generator_RowDeletedName="_B_TRowDeleted" msprop:Generator_UserTableName="B-T" msprop:Generator_RowChangedName="_B_TRowChanged" msprop:Generator_RowEvArgName="_B_TRowChangeEvent" msprop:Generator_RowClassName="_B_TRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_B" msprop:Generator_ColumnVarNameInTable="columnid_B" msprop:Generator_ColumnPropNameInRow="id_B" msprop:Generator_ColumnPropNameInTable="id_BColumn" msprop:Generator_UserColumnName="id_B" type="xs:int" minOccurs="0" />
@@ -689,7 +690,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Bus" msprop:Generator_TableClassName="BusDataTable" msprop:Generator_TableVarName="tableBus" msprop:Generator_RowChangedName="BusRowChanged" msprop:Generator_TablePropName="Bus" msprop:Generator_RowDeletingName="BusRowDeleting" msprop:Generator_RowChangingName="BusRowChanging" msprop:Generator_RowEvHandlerName="BusRowChangeEventHandler" msprop:Generator_RowDeletedName="BusRowDeleted" msprop:Generator_RowClassName="BusRow" msprop:Generator_UserTableName="Bus" msprop:Generator_RowEvArgName="BusRowChangeEvent">
+        <xs:element name="Bus" msprop:Generator_TableClassName="BusDataTable" msprop:Generator_TableVarName="tableBus" msprop:Generator_TablePropName="Bus" msprop:Generator_RowDeletingName="BusRowDeleting" msprop:Generator_RowChangingName="BusRowChanging" msprop:Generator_RowEvHandlerName="BusRowChangeEventHandler" msprop:Generator_RowDeletedName="BusRowDeleted" msprop:Generator_UserTableName="Bus" msprop:Generator_RowChangedName="BusRowChanged" msprop:Generator_RowEvArgName="BusRowChangeEvent" msprop:Generator_RowClassName="BusRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -713,7 +714,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="B-W" msprop:Generator_TableClassName="_B_WDataTable" msprop:Generator_TableVarName="_tableB_W" msprop:Generator_RowChangedName="_B_WRowChanged" msprop:Generator_TablePropName="_B_W" msprop:Generator_RowDeletingName="_B_WRowDeleting" msprop:Generator_RowChangingName="_B_WRowChanging" msprop:Generator_RowEvHandlerName="_B_WRowChangeEventHandler" msprop:Generator_RowDeletedName="_B_WRowDeleted" msprop:Generator_RowClassName="_B_WRow" msprop:Generator_UserTableName="B-W" msprop:Generator_RowEvArgName="_B_WRowChangeEvent">
+        <xs:element name="B-W" msprop:Generator_TableClassName="_B_WDataTable" msprop:Generator_TableVarName="_tableB_W" msprop:Generator_TablePropName="_B_W" msprop:Generator_RowDeletingName="_B_WRowDeleting" msprop:Generator_RowChangingName="_B_WRowChanging" msprop:Generator_RowEvHandlerName="_B_WRowChangeEventHandler" msprop:Generator_RowDeletedName="_B_WRowDeleted" msprop:Generator_UserTableName="B-W" msprop:Generator_RowChangedName="_B_WRowChanged" msprop:Generator_RowEvArgName="_B_WRowChangeEvent" msprop:Generator_RowClassName="_B_WRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_W" msprop:Generator_ColumnVarNameInTable="columnid_W" msprop:Generator_ColumnPropNameInRow="id_W" msprop:Generator_ColumnPropNameInTable="id_WColumn" msprop:Generator_UserColumnName="id_W" type="xs:int" minOccurs="0" />
@@ -721,7 +722,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Service" msprop:Generator_TableClassName="ServiceDataTable" msprop:Generator_TableVarName="tableService" msprop:Generator_RowChangedName="ServiceRowChanged" msprop:Generator_TablePropName="Service" msprop:Generator_RowDeletingName="ServiceRowDeleting" msprop:Generator_RowChangingName="ServiceRowChanging" msprop:Generator_RowEvHandlerName="ServiceRowChangeEventHandler" msprop:Generator_RowDeletedName="ServiceRowDeleted" msprop:Generator_RowClassName="ServiceRow" msprop:Generator_UserTableName="Service" msprop:Generator_RowEvArgName="ServiceRowChangeEvent">
+        <xs:element name="Service" msprop:Generator_TableClassName="ServiceDataTable" msprop:Generator_TableVarName="tableService" msprop:Generator_TablePropName="Service" msprop:Generator_RowDeletingName="ServiceRowDeleting" msprop:Generator_RowChangingName="ServiceRowChanging" msprop:Generator_RowEvHandlerName="ServiceRowChangeEventHandler" msprop:Generator_RowDeletedName="ServiceRowDeleted" msprop:Generator_UserTableName="Service" msprop:Generator_RowChangedName="ServiceRowChanged" msprop:Generator_RowEvArgName="ServiceRowChangeEvent" msprop:Generator_RowClassName="ServiceRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -745,7 +746,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Track" msprop:Generator_TableClassName="TrackDataTable" msprop:Generator_TableVarName="tableTrack" msprop:Generator_RowChangedName="TrackRowChanged" msprop:Generator_TablePropName="Track" msprop:Generator_RowDeletingName="TrackRowDeleting" msprop:Generator_RowChangingName="TrackRowChanging" msprop:Generator_RowEvHandlerName="TrackRowChangeEventHandler" msprop:Generator_RowDeletedName="TrackRowDeleted" msprop:Generator_RowClassName="TrackRow" msprop:Generator_UserTableName="Track" msprop:Generator_RowEvArgName="TrackRowChangeEvent">
+        <xs:element name="Track" msprop:Generator_TableClassName="TrackDataTable" msprop:Generator_TableVarName="tableTrack" msprop:Generator_TablePropName="Track" msprop:Generator_RowDeletingName="TrackRowDeleting" msprop:Generator_RowChangingName="TrackRowChanging" msprop:Generator_RowEvHandlerName="TrackRowChangeEventHandler" msprop:Generator_RowDeletedName="TrackRowDeleted" msprop:Generator_UserTableName="Track" msprop:Generator_RowChangedName="TrackRowChanged" msprop:Generator_RowEvArgName="TrackRowChangeEvent" msprop:Generator_RowClassName="TrackRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -770,7 +771,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="V-W" msprop:Generator_TableClassName="_V_WDataTable" msprop:Generator_TableVarName="_tableV_W" msprop:Generator_RowChangedName="_V_WRowChanged" msprop:Generator_TablePropName="_V_W" msprop:Generator_RowDeletingName="_V_WRowDeleting" msprop:Generator_RowChangingName="_V_WRowChanging" msprop:Generator_RowEvHandlerName="_V_WRowChangeEventHandler" msprop:Generator_RowDeletedName="_V_WRowDeleted" msprop:Generator_RowClassName="_V_WRow" msprop:Generator_UserTableName="V-W" msprop:Generator_RowEvArgName="_V_WRowChangeEvent">
+        <xs:element name="V-W" msprop:Generator_TableClassName="_V_WDataTable" msprop:Generator_TableVarName="_tableV_W" msprop:Generator_TablePropName="_V_W" msprop:Generator_RowDeletingName="_V_WRowDeleting" msprop:Generator_RowChangingName="_V_WRowChanging" msprop:Generator_RowEvHandlerName="_V_WRowChangeEventHandler" msprop:Generator_RowDeletedName="_V_WRowDeleted" msprop:Generator_UserTableName="V-W" msprop:Generator_RowChangedName="_V_WRowChanged" msprop:Generator_RowEvArgName="_V_WRowChangeEvent" msprop:Generator_RowClassName="_V_WRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_W" msprop:Generator_ColumnVarNameInTable="columnid_W" msprop:Generator_ColumnPropNameInRow="id_W" msprop:Generator_ColumnPropNameInTable="id_WColumn" msprop:Generator_UserColumnName="id_W" type="xs:int" minOccurs="0" />
@@ -778,7 +779,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Worker" msprop:Generator_TableClassName="WorkerDataTable" msprop:Generator_TableVarName="tableWorker" msprop:Generator_RowChangedName="WorkerRowChanged" msprop:Generator_TablePropName="Worker" msprop:Generator_RowDeletingName="WorkerRowDeleting" msprop:Generator_RowChangingName="WorkerRowChanging" msprop:Generator_RowEvHandlerName="WorkerRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkerRowDeleted" msprop:Generator_RowClassName="WorkerRow" msprop:Generator_UserTableName="Worker" msprop:Generator_RowEvArgName="WorkerRowChangeEvent">
+        <xs:element name="Worker" msprop:Generator_TableClassName="WorkerDataTable" msprop:Generator_TableVarName="tableWorker" msprop:Generator_TablePropName="Worker" msprop:Generator_RowDeletingName="WorkerRowDeleting" msprop:Generator_RowChangingName="WorkerRowChanging" msprop:Generator_RowEvHandlerName="WorkerRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkerRowDeleted" msprop:Generator_UserTableName="Worker" msprop:Generator_RowChangedName="WorkerRowChanged" msprop:Generator_RowEvArgName="WorkerRowChangeEvent" msprop:Generator_RowClassName="WorkerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -827,7 +828,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vacation" msprop:Generator_TableClassName="VacationDataTable" msprop:Generator_TableVarName="tableVacation" msprop:Generator_RowChangedName="VacationRowChanged" msprop:Generator_TablePropName="Vacation" msprop:Generator_RowDeletingName="VacationRowDeleting" msprop:Generator_RowChangingName="VacationRowChanging" msprop:Generator_RowEvHandlerName="VacationRowChangeEventHandler" msprop:Generator_RowDeletedName="VacationRowDeleted" msprop:Generator_RowClassName="VacationRow" msprop:Generator_UserTableName="Vacation" msprop:Generator_RowEvArgName="VacationRowChangeEvent">
+        <xs:element name="Vacation" msprop:Generator_TableClassName="VacationDataTable" msprop:Generator_TableVarName="tableVacation" msprop:Generator_TablePropName="Vacation" msprop:Generator_RowDeletingName="VacationRowDeleting" msprop:Generator_RowChangingName="VacationRowChanging" msprop:Generator_RowEvHandlerName="VacationRowChangeEventHandler" msprop:Generator_RowDeletedName="VacationRowDeleted" msprop:Generator_UserTableName="Vacation" msprop:Generator_RowChangedName="VacationRowChanged" msprop:Generator_RowEvArgName="VacationRowChangeEvent" msprop:Generator_RowClassName="VacationRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -867,7 +868,7 @@
         <xs:element name="All_x0020_drivers" msprop:Generator_TableClassName="All_driversDataTable" msprop:Generator_TableVarName="tableAll_drivers" msprop:Generator_TablePropName="All_drivers" msprop:Generator_RowDeletingName="All_driversRowDeleting" msprop:Generator_RowChangingName="All_driversRowChanging" msprop:Generator_RowEvHandlerName="All_driversRowChangeEventHandler" msprop:Generator_RowDeletedName="All_driversRowDeleted" msprop:Generator_UserTableName="All drivers" msprop:Generator_RowChangedName="All_driversRowChanged" msprop:Generator_RowEvArgName="All_driversRowChangeEvent" msprop:Generator_RowClassName="All_driversRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="Worker_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnWorker_id" msprop:Generator_ColumnPropNameInRow="Worker_id" msprop:Generator_ColumnPropNameInTable="Worker_idColumn" msprop:Generator_UserColumnName="Worker_id" type="xs:int" minOccurs="0" />
               <xs:element name="fio" msprop:Generator_ColumnVarNameInTable="columnfio" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_UserColumnName="fio" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -889,6 +890,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Bus_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnBus_id" msprop:Generator_ColumnPropNameInRow="Bus_id" msprop:Generator_ColumnPropNameInTable="Bus_idColumn" msprop:Generator_UserColumnName="Bus_id" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1151,13 +1153,13 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="BusB-T" msdata:parent="Bus" msdata:child="B-T" msdata:parentkey="id" msdata:childkey="id_B" msprop:Generator_UserChildTable="B-T" msprop:Generator_ChildPropName="_GetB_TRows" msprop:Generator_UserRelationName="BusB-T" msprop:Generator_ParentPropName="BusRow" msprop:Generator_RelationVarName="_relationBusB_T" msprop:Generator_UserParentTable="Bus" />
-      <msdata:Relationship name="TrackB-T" msdata:parent="Track" msdata:child="B-T" msdata:parentkey="id" msdata:childkey="id_T" msprop:Generator_UserChildTable="B-T" msprop:Generator_ChildPropName="_GetB_TRows" msprop:Generator_UserRelationName="TrackB-T" msprop:Generator_ParentPropName="TrackRow" msprop:Generator_RelationVarName="_relationTrackB_T" msprop:Generator_UserParentTable="Track" />
-      <msdata:Relationship name="BusB-W" msdata:parent="Bus" msdata:child="B-W" msdata:parentkey="id" msdata:childkey="id_B" msprop:Generator_UserChildTable="B-W" msprop:Generator_ChildPropName="_GetB_WRows" msprop:Generator_UserRelationName="BusB-W" msprop:Generator_RelationVarName="_relationBusB_W" msprop:Generator_UserParentTable="Bus" msprop:Generator_ParentPropName="BusRow" />
-      <msdata:Relationship name="WorkerB-W" msdata:parent="Worker" msdata:child="B-W" msdata:parentkey="id" msdata:childkey="id_W" msprop:Generator_UserChildTable="B-W" msprop:Generator_ChildPropName="_GetB_WRows" msprop:Generator_UserRelationName="WorkerB-W" msprop:Generator_ParentPropName="WorkerRow" msprop:Generator_RelationVarName="_relationWorkerB_W" msprop:Generator_UserParentTable="Worker" />
-      <msdata:Relationship name="BusService" msdata:parent="Bus" msdata:child="Service" msdata:parentkey="id" msdata:childkey="id" msprop:Generator_UserChildTable="Service" msprop:Generator_ChildPropName="GetServiceRows" msprop:Generator_UserRelationName="BusService" msprop:Generator_RelationVarName="relationBusService" msprop:Generator_UserParentTable="Bus" msprop:Generator_ParentPropName="BusRow" />
-      <msdata:Relationship name="WorkerV-W" msdata:parent="Worker" msdata:child="V-W" msdata:parentkey="id" msdata:childkey="id_W" msprop:Generator_UserChildTable="V-W" msprop:Generator_ChildPropName="_GetV_WRows" msprop:Generator_UserRelationName="WorkerV-W" msprop:Generator_ParentPropName="WorkerRow" msprop:Generator_RelationVarName="_relationWorkerV_W" msprop:Generator_UserParentTable="Worker" />
-      <msdata:Relationship name="VacationV-W" msdata:parent="Vacation" msdata:child="V-W" msdata:parentkey="id" msdata:childkey="id_V" msprop:Generator_UserChildTable="V-W" msprop:Generator_ChildPropName="_GetV_WRows" msprop:Generator_UserRelationName="VacationV-W" msprop:Generator_ParentPropName="VacationRow" msprop:Generator_RelationVarName="_relationVacationV_W" msprop:Generator_UserParentTable="Vacation" />
+      <msdata:Relationship name="BusB-T" msdata:parent="Bus" msdata:child="B-T" msdata:parentkey="id" msdata:childkey="id_B" msprop:Generator_UserChildTable="B-T" msprop:Generator_ChildPropName="_GetB_TRows" msprop:Generator_UserRelationName="BusB-T" msprop:Generator_RelationVarName="_relationBusB_T" msprop:Generator_UserParentTable="Bus" msprop:Generator_ParentPropName="BusRow" />
+      <msdata:Relationship name="TrackB-T" msdata:parent="Track" msdata:child="B-T" msdata:parentkey="id" msdata:childkey="id_T" msprop:Generator_UserChildTable="B-T" msprop:Generator_ChildPropName="_GetB_TRows" msprop:Generator_UserRelationName="TrackB-T" msprop:Generator_RelationVarName="_relationTrackB_T" msprop:Generator_UserParentTable="Track" msprop:Generator_ParentPropName="TrackRow" />
+      <msdata:Relationship name="BusB-W" msdata:parent="Bus" msdata:child="B-W" msdata:parentkey="id" msdata:childkey="id_B" msprop:Generator_UserChildTable="B-W" msprop:Generator_ChildPropName="_GetB_WRows" msprop:Generator_UserRelationName="BusB-W" msprop:Generator_ParentPropName="BusRow" msprop:Generator_RelationVarName="_relationBusB_W" msprop:Generator_UserParentTable="Bus" />
+      <msdata:Relationship name="WorkerB-W" msdata:parent="Worker" msdata:child="B-W" msdata:parentkey="id" msdata:childkey="id_W" msprop:Generator_UserChildTable="B-W" msprop:Generator_ChildPropName="_GetB_WRows" msprop:Generator_UserRelationName="WorkerB-W" msprop:Generator_RelationVarName="_relationWorkerB_W" msprop:Generator_UserParentTable="Worker" msprop:Generator_ParentPropName="WorkerRow" />
+      <msdata:Relationship name="BusService" msdata:parent="Bus" msdata:child="Service" msdata:parentkey="id" msdata:childkey="id" msprop:Generator_UserChildTable="Service" msprop:Generator_ChildPropName="GetServiceRows" msprop:Generator_UserRelationName="BusService" msprop:Generator_ParentPropName="BusRow" msprop:Generator_RelationVarName="relationBusService" msprop:Generator_UserParentTable="Bus" />
+      <msdata:Relationship name="WorkerV-W" msdata:parent="Worker" msdata:child="V-W" msdata:parentkey="id" msdata:childkey="id_W" msprop:Generator_UserChildTable="V-W" msprop:Generator_ChildPropName="_GetV_WRows" msprop:Generator_UserRelationName="WorkerV-W" msprop:Generator_RelationVarName="_relationWorkerV_W" msprop:Generator_UserParentTable="Worker" msprop:Generator_ParentPropName="WorkerRow" />
+      <msdata:Relationship name="VacationV-W" msdata:parent="Vacation" msdata:child="V-W" msdata:parentkey="id" msdata:childkey="id_V" msprop:Generator_UserChildTable="V-W" msprop:Generator_ChildPropName="_GetV_WRows" msprop:Generator_UserRelationName="VacationV-W" msprop:Generator_RelationVarName="_relationVacationV_W" msprop:Generator_UserParentTable="Vacation" msprop:Generator_ParentPropName="VacationRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

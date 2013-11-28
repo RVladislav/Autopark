@@ -66,6 +66,8 @@
             this.txtFind = new System.Windows.Forms.TextBox();
             this.lblFind = new System.Windows.Forms.Label();
             this.ds = new Autopark.ds();
+            this.назначитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.назначитьНаДолжностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
@@ -113,7 +115,9 @@
             this.toolbtnWorker,
             this.toolbtnVacation,
             this.новыйМаршрутToolStripMenuItem,
-            this.новоеСервисноеОбслуживаниеToolStripMenuItem});
+            this.новоеСервисноеОбслуживаниеToolStripMenuItem,
+            this.назначитьВодителяToolStripMenuItem,
+            this.назначитьНаДолжностьToolStripMenuItem});
             this.toolbtnEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolbtnEdit.Image")));
             this.toolbtnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolbtnEdit.Name = "toolbtnEdit";
@@ -426,6 +430,20 @@
             this.ds.DataSetName = "ds";
             this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // назначитьВодителяToolStripMenuItem
+            // 
+            this.назначитьВодителяToolStripMenuItem.Name = "назначитьВодителяToolStripMenuItem";
+            this.назначитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.назначитьВодителяToolStripMenuItem.Text = "Назначить водителя";
+            this.назначитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.назначитьВодителяToolStripMenuItem_Click);
+            // 
+            // назначитьНаДолжностьToolStripMenuItem
+            // 
+            this.назначитьНаДолжностьToolStripMenuItem.Name = "назначитьНаДолжностьToolStripMenuItem";
+            this.назначитьНаДолжностьToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.назначитьНаДолжностьToolStripMenuItem.Text = "Назначить на должность";
+            this.назначитьНаДолжностьToolStripMenuItem.Click += new System.EventHandler(this.назначитьНаДолжностьToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,6 +509,8 @@
         private System.Windows.Forms.ToolStripMenuItem работникиВакансииToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem модернToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem индиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem назначитьВодителяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem назначитьНаДолжностьToolStripMenuItem;
     }
 }
 

@@ -3439,13 +3439,15 @@ namespace Autopark {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class All_driversDataTable : global::System.Data.TypedTableBase<All_driversRow> {
             
-            private global::System.Data.DataColumn columnid;
+            private global::System.Data.DataColumn columnWorker_id;
             
             private global::System.Data.DataColumn columnfio;
             
             private global::System.Data.DataColumn columnnumber;
             
             private global::System.Data.DataColumn columnmark;
+            
+            private global::System.Data.DataColumn columnBus_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3482,9 +3484,9 @@ namespace Autopark {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
+            public global::System.Data.DataColumn Worker_idColumn {
                 get {
-                    return this.columnid;
+                    return this.columnWorker_id;
                 }
             }
             
@@ -3509,6 +3511,14 @@ namespace Autopark {
             public global::System.Data.DataColumn markColumn {
                 get {
                     return this.columnmark;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Bus_idColumn {
+                get {
+                    return this.columnBus_id;
                 }
             }
             
@@ -3555,7 +3565,8 @@ namespace Autopark {
                         null,
                         fio,
                         number,
-                        mark};
+                        mark,
+                        null};
                 rowAll_driversRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAll_driversRow);
                 return rowAll_driversRow;
@@ -3578,29 +3589,35 @@ namespace Autopark {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnid = base.Columns["id"];
+                this.columnWorker_id = base.Columns["Worker_id"];
                 this.columnfio = base.Columns["fio"];
                 this.columnnumber = base.Columns["number"];
                 this.columnmark = base.Columns["mark"];
+                this.columnBus_id = base.Columns["Bus_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
+                this.columnWorker_id = new global::System.Data.DataColumn("Worker_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWorker_id);
                 this.columnfio = new global::System.Data.DataColumn("fio", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfio);
                 this.columnnumber = new global::System.Data.DataColumn("number", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumber);
                 this.columnmark = new global::System.Data.DataColumn("mark", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmark);
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
+                this.columnBus_id = new global::System.Data.DataColumn("Bus_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBus_id);
+                this.columnWorker_id.AutoIncrement = true;
+                this.columnWorker_id.AutoIncrementSeed = -1;
+                this.columnWorker_id.AutoIncrementStep = -1;
                 this.columnfio.MaxLength = 255;
                 this.columnnumber.MaxLength = 6;
                 this.columnmark.MaxLength = 20;
+                this.columnBus_id.AutoIncrement = true;
+                this.columnBus_id.AutoIncrementSeed = -1;
+                this.columnBus_id.AutoIncrementStep = -1;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7217,17 +7234,17 @@ namespace Autopark {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id {
+            public int Worker_id {
                 get {
                     try {
-                        return ((int)(this[this.tableAll_drivers.idColumn]));
+                        return ((int)(this[this.tableAll_drivers.Worker_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id\' in table \'All drivers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Worker_id\' in table \'All drivers\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAll_drivers.idColumn] = value;
+                    this[this.tableAll_drivers.Worker_idColumn] = value;
                 }
             }
             
@@ -7281,14 +7298,30 @@ namespace Autopark {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsidNull() {
-                return this.IsNull(this.tableAll_drivers.idColumn);
+            public int Bus_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableAll_drivers.Bus_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bus_id\' in table \'All drivers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAll_drivers.Bus_idColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetidNull() {
-                this[this.tableAll_drivers.idColumn] = global::System.Convert.DBNull;
+            public bool IsWorker_idNull() {
+                return this.IsNull(this.tableAll_drivers.Worker_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWorker_idNull() {
+                this[this.tableAll_drivers.Worker_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7325,6 +7358,18 @@ namespace Autopark {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetmarkNull() {
                 this[this.tableAll_drivers.markColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBus_idNull() {
+                return this.IsNull(this.tableAll_drivers.Bus_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBus_idNull() {
+                this[this.tableAll_drivers.Bus_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -12695,10 +12740,11 @@ namespace Autopark.dsTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "All drivers";
-            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("Worker.id", "Worker_id");
             tableMapping.ColumnMappings.Add("fio", "fio");
             tableMapping.ColumnMappings.Add("number", "number");
             tableMapping.ColumnMappings.Add("mark", "mark");
+            tableMapping.ColumnMappings.Add("Bus.id", "Bus_id");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -12715,7 +12761,7 @@ namespace Autopark.dsTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, fio, [number], mark FROM [All drivers]";
+            this._commandCollection[0].CommandText = "SELECT [Worker.id], fio, [number], mark, [Bus.id] FROM [All drivers]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
