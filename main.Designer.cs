@@ -44,7 +44,6 @@
             this.toollblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblVacation = new System.Windows.Forms.Label();
@@ -188,7 +187,6 @@
             // pnlMenu
             // 
             this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlMenu.Controls.Add(this.button1);
             this.pnlMenu.Controls.Add(this.label2);
             this.pnlMenu.Controls.Add(this.label1);
             this.pnlMenu.Controls.Add(this.lblVacation);
@@ -199,16 +197,6 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(167, 416);
             this.pnlMenu.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(32, 247);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -317,6 +305,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Text = "Автопарк";
             this.toolStrip.ResumeLayout(false);
@@ -355,10 +344,9 @@
         private System.Windows.Forms.ToolStripMenuItem новоеСервисноеОбслуживаниеToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvMain;
         private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Label lblFind;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvMain;
     }
 }
 

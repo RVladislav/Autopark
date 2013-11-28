@@ -143,15 +143,5 @@ namespace Autopark
             {
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DB_functions fun = new DB_functions();
-            fun.Save();
-        }
-
-
-
-
     }
 }
