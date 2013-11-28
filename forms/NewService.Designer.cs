@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbBus = new System.Windows.Forms.ComboBox();
             this.busBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.fchbDone = new System.Windows.Forms.CheckBox();
+            this.cmbDone = new System.Windows.Forms.CheckBox();
             this.cmbWhells = new System.Windows.Forms.CheckBox();
             this.cmbControl = new System.Windows.Forms.CheckBox();
             this.cmbStop = new System.Windows.Forms.CheckBox();
@@ -124,15 +124,15 @@
             this.busBindingSource1.DataMember = "Bus";
             this.busBindingSource1.DataSource = this.ds;
             // 
-            // fchbDone
+            // cmbDone
             // 
-            this.fchbDone.AutoSize = true;
-            this.fchbDone.Location = new System.Drawing.Point(12, 573);
-            this.fchbDone.Name = "fchbDone";
-            this.fchbDone.Size = new System.Drawing.Size(73, 17);
-            this.fchbDone.TabIndex = 16;
-            this.fchbDone.Text = "Допущен";
-            this.fchbDone.UseVisualStyleBackColor = true;
+            this.cmbDone.AutoSize = true;
+            this.cmbDone.Location = new System.Drawing.Point(12, 573);
+            this.cmbDone.Name = "cmbDone";
+            this.cmbDone.Size = new System.Drawing.Size(73, 17);
+            this.cmbDone.TabIndex = 16;
+            this.cmbDone.Text = "Допущен";
+            this.cmbDone.UseVisualStyleBackColor = true;
             // 
             // cmbWhells
             // 
@@ -263,7 +263,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSpeed);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.fchbDone);
+            this.Controls.Add(this.cmbDone);
             this.Controls.Add(this.cmbBus);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescription);
@@ -294,7 +294,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbBus;
         private System.Windows.Forms.BindingSource busBindingSource1;
-        private System.Windows.Forms.CheckBox fchbDone;
+        private System.Windows.Forms.CheckBox cmbDone;
         private System.Windows.Forms.CheckBox cmbWhells;
         private System.Windows.Forms.CheckBox cmbControl;
         private System.Windows.Forms.CheckBox cmbStop;

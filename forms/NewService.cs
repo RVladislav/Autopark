@@ -11,7 +11,6 @@ namespace Autopark
 {
     public partial class frmNewService : Form
     {
-        DB_functions autopark = new DB_functions();
         public frmNewService()
         {
             InitializeComponent();
@@ -26,7 +25,32 @@ namespace Autopark
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DB_functions fun = new DB_functions();
+                DB_functions.Fields_Service fields = new DB_functions.Fields_Service();
 
+                fields.f0 = int.Parse(cmbBus.SelectedValue.ToString());
+                fields.f1 = txtDescription.Text;
+                fields.f2 = cmbWhells.Checked;
+                fields.f3 = cmbControl.Checked;
+                fields.f4 = cmbStop.Checked;
+                fields.f5 = cmbMotor.Checked;
+                fields.f6 = cmbExterier.Checked;
+                fields.f7 = cmbInterier.Checked;
+                fields.f8 = cmbRust.Checked;
+                fields.f9 = int.Parse(txtSpeed.Text);
+                DateTime time = DateTime.Parse(dtpCreate.Value.ToString("dd.MM.yyyy"));
+                fields.f10 = time;
+                fields.f11 = cmbDone.Checked;
+
+                fun.Save(fields);
+                this.Close();
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Невозможно сохранить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
      

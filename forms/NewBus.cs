@@ -46,15 +46,15 @@ namespace Autopark
             try
             {
                 DB_functions fun = new DB_functions();
-                DB_functions.Fields_Bus f = new DB_functions.Fields_Bus();
+                DB_functions.Fields_Bus fields = new DB_functions.Fields_Bus();
 
-                f.f1 = txtNumber.Text;
-                f.f2 = cmbMark.Text;
-                f.f3 = cbTour.Checked;
-                f.f4 = cbNew.Checked;
-                f.f5 = int.Parse(txtSits.Text);
+                fields.f1 = txtNumber.Text;
+                fields.f2 = cmbMark.Text;
+                fields.f3 = cbTour.Checked;
+                fields.f4 = cbNew.Checked;
+                fields.f5 = int.Parse(txtSits.Text);
 
-                fun.Save(f);
+                fun.Save(fields);
                 this.Close();
             }
             catch (Exception E)
