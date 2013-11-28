@@ -78,7 +78,7 @@
             this.cmbDriver.Name = "cmbDriver";
             this.cmbDriver.Size = new System.Drawing.Size(261, 21);
             this.cmbDriver.TabIndex = 1;
-            this.cmbDriver.ValueMember = "Worker_id";
+            this.cmbDriver.ValueMember = "id";
             // 
             // allDriversBindingSource
             // 
@@ -109,7 +109,7 @@
             this.cmbTrack.Name = "cmbTrack";
             this.cmbTrack.Size = new System.Drawing.Size(261, 21);
             this.cmbTrack.TabIndex = 5;
-            this.cmbTrack.ValueMember = "Track_id";
+            this.cmbTrack.ValueMember = "id";
             // 
             // trackBindingSource
             // 

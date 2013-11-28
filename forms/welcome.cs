@@ -20,6 +20,16 @@ namespace Autopark
         {
             string login = txtLogin.Text;
             string password = txtPassword.Text;
+            if (login == "admin" && password == "admin")
+            {
+                this.DialogResult = DialogResult.OK; 
+                this.Close();              
+            }
+            if (login == "user" && password == "user")
+            {
+                this.DialogResult = DialogResult.Abort;
+                this.Close();
+            }
         }
 
     }

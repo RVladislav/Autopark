@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Autopark
 {
-    public partial class frmReport : Form
+    public partial class frmAdmin : Form
     {
-        public frmReport()
+        public frmAdmin()
         {
             InitializeComponent();
         }

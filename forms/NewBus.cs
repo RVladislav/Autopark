@@ -55,11 +55,13 @@ namespace Autopark
                 fields.f4 = cbNew.Checked;
                 fields.f5 = int.Parse(txtSits.Text);
 
-                bt.f1 = ds.Bus.Rows.Count + 1;
-                bt.f2 = int.Parse(cmbTrack.ValueMember.ToString());//Проверить!!!!!
-
                 fun.Save(fields);
+
+                bt.f1 = int.Parse(ds.Bus.Rows[ds.Bus.Rows.Count - 1][0].ToString());
+                bt.f2 = int.Parse(cmbTrack.SelectedValue.ToString());
+
                 fun.Save(bt);
+
                 this.Close();
             }
             catch (Exception E)

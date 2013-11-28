@@ -1,6 +1,6 @@
 ﻿namespace Autopark
 {
-    partial class frmReport
+    partial class frmAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblName = new System.Windows.Forms.Label();
+            this.dgvAdmin = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblName
+            // dgvAdmin
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(13, 13);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(35, 13);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Name";
+            this.dgvAdmin.AllowUserToOrderColumns = true;
+            this.dgvAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAdmin.Location = new System.Drawing.Point(12, 12);
+            this.dgvAdmin.Name = "dgvAdmin";
+            this.dgvAdmin.Size = new System.Drawing.Size(736, 436);
+            this.dgvAdmin.TabIndex = 0;
             // 
-            // frmReport
+            // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.lblName);
+            this.ClientSize = new System.Drawing.Size(760, 460);
+            this.Controls.Add(this.dgvAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "frmReport";
-            this.Text = "Отчёт";
+            this.Name = "frmAdmin";
+            this.Text = "Администратор";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblName;
+        public System.Windows.Forms.DataGridView dgvAdmin;
+
+
     }
 }

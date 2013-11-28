@@ -18,7 +18,7 @@ namespace Autopark
 
         private void toolbtnReport_Click(object sender, EventArgs e)
         {
-            frmReport frm = new frmReport();
+            frmAdmin frm = new frmAdmin();
             frm.ShowDialog();
         }
 
@@ -97,23 +97,12 @@ namespace Autopark
             dgvMain.Update();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            dsTableAdapters.ServiceTableAdapter taService = new dsTableAdapters.ServiceTableAdapter();
-            taService.Fill(ds.Service);
-            dgvMain.DataSource = ds.Service;
-            dgvMain.Update();
-        }
 
         private void dgvMain_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dgvMain.Columns[0].Visible = false;
         }
 
-        private void dgvMain_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
 
         private void txtFind_TextChanged(object sender, EventArgs e)
         {
@@ -143,21 +132,123 @@ namespace Autopark
             }
         }
 
-        private void правкаЭлементовToolStripMenuItem_Click(object sender, EventArgs e)
+   
+        private void frmMain_Load(object sender, EventArgs e)
         {
-            //Проверить!!!
-            if (dgvMain.ReadOnly == true)
-            {
-                dgvMain.ReadOnly = false;
-                tooDGVEdit.Text = "♦ Правка элементов ♦";
-            }
-            else
-            {
-                dgvMain.ReadOnly = true;
-                tooDGVEdit.Text = "Правка элементов";
-            }
+            frmWelcome frm = new frmWelcome();            
+            frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK) toolAdmin.Visible = true;
+            if (frm.DialogResult == DialogResult.Cancel) Application.Exit();
+        }
 
+        private void автобусыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.BusTableAdapter ta = new dsTableAdapters.BusTableAdapter();
+            ta.Fill(ds.Bus);
+            frm.dgvAdmin.DataSource = ds.Bus;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+        }
+
+        private void toolAdmin_ButtonClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Режим администратора выключен", "Выход", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            toolAdmin.Visible = false;
+        }
+
+        private void работникиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.WorkerTableAdapter ta = new dsTableAdapters.WorkerTableAdapter();
+            ta.Fill(ds.Worker);
+            frm.dgvAdmin.DataSource = ds.Worker;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.All_driversTableAdapter t = new dsTableAdapters.All_driversTableAdapter();
+            t.Fill(ds.All_drivers);
+            dgvMain.DataSource = ds.All_drivers;
             dgvMain.Update();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.Bus_TrackTableAdapter t = new dsTableAdapters.Bus_TrackTableAdapter();
+            t.Fill(ds._Bus_Track);
+            dgvMain.DataSource = ds._Bus_Track;
+            dgvMain.Update();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.Bus_ServiceTableAdapter t = new dsTableAdapters.Bus_ServiceTableAdapter();
+            t.Fill(ds._Bus_Service);
+            dgvMain.DataSource = ds._Bus_Service;
+            dgvMain.Update();
+        }
+
+        private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin(); 
+            dsTableAdapters.VacationTableAdapter t = new dsTableAdapters.VacationTableAdapter();
+            t.Fill(ds.Vacation);
+            frm.dgvAdmin.DataSource = ds.Vacation;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+        }
+
+        private void маршрутыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.TrackTableAdapter t = new dsTableAdapters.TrackTableAdapter();
+            t.Fill(ds.Track);
+            frm.dgvAdmin.DataSource = ds.Track;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+        }
+
+        private void тОToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.ServiceTableAdapter t = new dsTableAdapters.ServiceTableAdapter();
+            t.Fill(ds.Service);
+            frm.dgvAdmin.DataSource = ds.Service;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+        }
+
+        private void автобусыМаршрутыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.Bus_TrackTableAdapter t = new dsTableAdapters.Bus_TrackTableAdapter();
+            t.Fill(ds._Bus_Track);
+            frm.dgvAdmin.DataSource = ds._Bus_Track;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+        }
+
+        private void работникиАвтобусыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.B_WTableAdapter t = new dsTableAdapters.B_WTableAdapter();
+            t.Fill(ds._B_W);
+            frm.dgvAdmin.DataSource = ds._B_W;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+        }
+
+        private void работникиВакансииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.V_WTableAdapter t = new dsTableAdapters.V_WTableAdapter();
+            t.Fill(ds._V_W);
+            frm.dgvAdmin.DataSource = ds._V_W;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
         }
     }
 }

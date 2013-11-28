@@ -75,7 +75,7 @@ namespace Autopark
             public string f2;
             public string f3;
             public string f4;
-            public int f5;//Поменять формат в таблице!!!
+            public int f5;
             public bool f6;
         }
 
@@ -98,7 +98,17 @@ namespace Autopark
 
         public void Save(Link_BusTrack bt)
         {
+            using (OleDbConnection con = new OleDbConnection(connectionString))
+            {
+                OleDbCommand cmd = new OleDbCommand("AddBusTrack", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@idB", bt.f1);
+                cmd.Parameters.AddWithValue("@idT", bt.f2);
+
+                RunQuery(con, cmd);
+
+            }
         }
 
         public void Save(Fields_Vacation fields)

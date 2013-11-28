@@ -56,6 +56,7 @@
             this.txtPassword.BackColor = System.Drawing.SystemColors.Control;
             this.txtPassword.Location = new System.Drawing.Point(12, 38);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(181, 20);
             this.txtPassword.TabIndex = 2;
             // 
@@ -68,7 +69,10 @@
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.btnEnter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmWelcome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Автопарк";
             this.ResumeLayout(false);
             this.PerformLayout();

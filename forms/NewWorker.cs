@@ -35,7 +35,7 @@ namespace Autopark
             try
             {
                 DB_functions fun = new DB_functions();
-                DB_functions.Fields_Worker fields = new DB_functions.Fields_Worker(););
+                DB_functions.Fields_Worker fields = new DB_functions.Fields_Worker();
 
                 fields.f1 = txtFIO.Text;
                 DateTime time = DateTime.Parse(dtpYearsold.Value.ToString("dd.MM.yyyy"));
@@ -52,6 +52,7 @@ namespace Autopark
                 fields.f12 = txtOthers.Text;
 
                 fun.Save(fields);
+                
                 this.Close();
             }
             catch (Exception E)
