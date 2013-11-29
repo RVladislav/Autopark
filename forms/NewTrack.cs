@@ -29,7 +29,7 @@ namespace Autopark
                 fields.f4 = chbCity.Checked;
                 DateTime time = DateTime.Parse(dtpCreate.Value.ToString("dd.MM.yyyy"));
                 fields.f5 = time;
-                fields.f6 = chbDone.Checked;
+                fields.f6 = false;
 
                 fun.Save(fields);
 

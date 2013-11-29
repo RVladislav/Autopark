@@ -37,7 +37,6 @@
             this.chbCity = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpCreate = new System.Windows.Forms.DateTimePicker();
-            this.chbDone = new System.Windows.Forms.CheckBox();
             this.ds = new Autopark.ds();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
@@ -120,16 +119,6 @@
             this.dtpCreate.Size = new System.Drawing.Size(138, 20);
             this.dtpCreate.TabIndex = 9;
             // 
-            // chbDone
-            // 
-            this.chbDone.AutoSize = true;
-            this.chbDone.Location = new System.Drawing.Point(15, 296);
-            this.chbDone.Name = "chbDone";
-            this.chbDone.Size = new System.Drawing.Size(76, 17);
-            this.chbDone.TabIndex = 11;
-            this.chbDone.Text = "Одобрено";
-            this.chbDone.UseVisualStyleBackColor = true;
-            // 
             // ds
             // 
             this.ds.DataSetName = "ds";
@@ -156,7 +145,6 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(471, 330);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.chbDone);
             this.Controls.Add(this.dtpCreate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chbCity);
@@ -186,7 +174,6 @@
         private System.Windows.Forms.CheckBox chbCity;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpCreate;
-        private System.Windows.Forms.CheckBox chbDone;
         private ds ds;
         private System.Windows.Forms.Button button1;
     }

@@ -42,7 +42,7 @@ namespace Autopark
                 fields.f9 = int.Parse(txtSpeed.Text);
                 DateTime time = DateTime.Parse(dtpCreate.Value.ToString("dd.MM.yyyy"));
                 fields.f10 = time;
-                fields.f11 = cmbDone.Checked;
+                fields.f11 = false;
 
                 fun.Save(fields);
 

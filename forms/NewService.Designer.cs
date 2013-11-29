@@ -36,7 +36,6 @@
             this.busTableAdapter = new Autopark.dsTableAdapters.BusTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbBus = new System.Windows.Forms.ComboBox();
-            this.cmbDone = new System.Windows.Forms.CheckBox();
             this.cmbWhells = new System.Windows.Forms.CheckBox();
             this.cmbControl = new System.Windows.Forms.CheckBox();
             this.cmbStop = new System.Windows.Forms.CheckBox();
@@ -106,16 +105,6 @@
             this.cmbBus.Size = new System.Drawing.Size(171, 21);
             this.cmbBus.TabIndex = 15;
             this.cmbBus.ValueMember = "id";
-            // 
-            // cmbDone
-            // 
-            this.cmbDone.AutoSize = true;
-            this.cmbDone.Location = new System.Drawing.Point(12, 536);
-            this.cmbDone.Name = "cmbDone";
-            this.cmbDone.Size = new System.Drawing.Size(73, 17);
-            this.cmbDone.TabIndex = 16;
-            this.cmbDone.Text = "Допущен";
-            this.cmbDone.UseVisualStyleBackColor = true;
             // 
             // cmbWhells
             // 
@@ -262,7 +251,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSpeed);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbDone);
             this.Controls.Add(this.cmbBus);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescription);
@@ -289,7 +277,6 @@
         private dsTableAdapters.BusTableAdapter busTableAdapter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbBus;
-        private System.Windows.Forms.CheckBox cmbDone;
         private System.Windows.Forms.CheckBox cmbWhells;
         private System.Windows.Forms.CheckBox cmbControl;
         private System.Windows.Forms.CheckBox cmbStop;
