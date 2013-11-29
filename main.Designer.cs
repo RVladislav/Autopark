@@ -58,6 +58,7 @@
             this.txtFind = new System.Windows.Forms.ToolStripTextBox();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnTrackAccess = new System.Windows.Forms.Button();
             this.btnTO = new System.Windows.Forms.Button();
             this.btnBusAccess = new System.Windows.Forms.Button();
             this.btnVacationTrue = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@
             this.btnBus = new System.Windows.Forms.Button();
             this.dgvMain = new System.Windows.Forms.DataGridView();
             this.ds = new Autopark.ds();
-            this.btnTrackAccess = new System.Windows.Forms.Button();
             this.toolStrip.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
@@ -221,7 +221,7 @@
             // toolbtnHelp
             // 
             this.toolbtnHelp.Name = "toolbtnHelp";
-            this.toolbtnHelp.Size = new System.Drawing.Size(123, 22);
+            this.toolbtnHelp.Size = new System.Drawing.Size(152, 22);
             this.toolbtnHelp.Text = "Помощь";
             this.toolbtnHelp.Click += new System.EventHandler(this.toolbtnHelp_Click);
             // 
@@ -335,6 +335,20 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(227, 460);
             this.pnlMenu.TabIndex = 2;
+            // 
+            // btnTrackAccess
+            // 
+            this.btnTrackAccess.FlatAppearance.BorderSize = 0;
+            this.btnTrackAccess.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnTrackAccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrackAccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnTrackAccess.Location = new System.Drawing.Point(3, 275);
+            this.btnTrackAccess.Name = "btnTrackAccess";
+            this.btnTrackAccess.Size = new System.Drawing.Size(215, 28);
+            this.btnTrackAccess.TabIndex = 24;
+            this.btnTrackAccess.Text = "Одобренные маршруты";
+            this.btnTrackAccess.UseVisualStyleBackColor = true;
+            this.btnTrackAccess.Click += new System.EventHandler(this.btnTrackAccess_Click);
             // 
             // btnTO
             // 
@@ -474,6 +488,7 @@
             this.dgvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMain.Location = new System.Drawing.Point(225, 25);
+            this.dgvMain.MultiSelect = false;
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.ReadOnly = true;
             this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -486,20 +501,6 @@
             // 
             this.ds.DataSetName = "ds";
             this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnTrackAccess
-            // 
-            this.btnTrackAccess.FlatAppearance.BorderSize = 0;
-            this.btnTrackAccess.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
-            this.btnTrackAccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrackAccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnTrackAccess.Location = new System.Drawing.Point(3, 275);
-            this.btnTrackAccess.Name = "btnTrackAccess";
-            this.btnTrackAccess.Size = new System.Drawing.Size(215, 28);
-            this.btnTrackAccess.TabIndex = 24;
-            this.btnTrackAccess.Text = "Одобренные маршруты";
-            this.btnTrackAccess.UseVisualStyleBackColor = true;
-            this.btnTrackAccess.Click += new System.EventHandler(this.btnTrackAccess_Click);
             // 
             // frmMain
             // 

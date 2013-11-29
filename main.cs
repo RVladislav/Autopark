@@ -221,6 +221,13 @@ namespace Autopark
             dsTableAdapters.BusTableAdapter taBus = new dsTableAdapters.BusTableAdapter();
             taBus.Fill(ds.Bus);
             dgvMain.DataSource = ds.Bus;
+
+            dgvMain.Columns[1].HeaderText = "Номер";
+            dgvMain.Columns[2].HeaderText = "Марка";
+            dgvMain.Columns[3].HeaderText = "Экскурсионный";
+            dgvMain.Columns[4].HeaderText = "Новый";
+            dgvMain.Columns[5].HeaderText = "Кол-во мест";
+
             dgvMain.Update();
         }
 
@@ -229,6 +236,20 @@ namespace Autopark
             dsTableAdapters.WorkerTableAdapter taWorker = new dsTableAdapters.WorkerTableAdapter();
             taWorker.Fill(ds.Worker);
             dgvMain.DataSource = ds.Worker;
+
+            dgvMain.Columns[1].HeaderText = "ФИО";
+            dgvMain.Columns[2].HeaderText = "Возраст";
+            dgvMain.Columns[3].HeaderText = "Стаж";
+            dgvMain.Columns[4].HeaderText = "Телефон";
+            dgvMain.Columns[5].HeaderText = "Семья";
+            dgvMain.Columns[6].HeaderText = "Хобби";
+            dgvMain.Columns[7].HeaderText = "Ветеран";
+            dgvMain.Columns[8].HeaderText = "Сирота";
+            dgvMain.Columns[9].HeaderText = "Инвалид";
+            dgvMain.Columns[10].HeaderText = "Многодетная семья";
+            dgvMain.Columns[11].HeaderText = "Машина";
+            dgvMain.Columns[12].HeaderText = "Примечания";
+
             dgvMain.Update();
         }
 
@@ -237,6 +258,14 @@ namespace Autopark
             dsTableAdapters.VacationTableAdapter taVacation = new dsTableAdapters.VacationTableAdapter();
             taVacation.Fill(ds.Vacation);
             dgvMain.DataSource = ds.Vacation;
+
+            dgvMain.Columns[1].HeaderText = "Название";
+            dgvMain.Columns[2].HeaderText = "Описание";
+            dgvMain.Columns[3].HeaderText = "Требования";
+            dgvMain.Columns[4].HeaderText = "Подробное описание";
+            dgvMain.Columns[5].HeaderText = "Минимальная з/п";
+            dgvMain.Columns[6].HeaderText = "В офисе";
+
             dgvMain.Update();
         }
 
@@ -245,6 +274,14 @@ namespace Autopark
             dsTableAdapters.TrackTableAdapter taTrack = new dsTableAdapters.TrackTableAdapter();
             taTrack.Fill(ds.Track);
             dgvMain.DataSource = ds.Track;
+
+            dgvMain.Columns[1].HeaderText = "Название";
+            dgvMain.Columns[2].HeaderText = "Остановки";
+            dgvMain.Columns[3].HeaderText = "Время в пути";
+            dgvMain.Columns[4].HeaderText = "По городу";
+            dgvMain.Columns[5].HeaderText = "Дата создания";
+            dgvMain.Columns[6].HeaderText = "Одобрен";
+
             dgvMain.Update();
         }
 
@@ -253,6 +290,11 @@ namespace Autopark
             dsTableAdapters.All_driversTableAdapter t = new dsTableAdapters.All_driversTableAdapter();
             t.Fill(ds.All_drivers);
             dgvMain.DataSource = ds.All_drivers;
+
+            dgvMain.Columns[1].HeaderText = "ФИО";
+            dgvMain.Columns[2].HeaderText = "Номер автобуса";
+            dgvMain.Columns[3].HeaderText = "Марка";
+
             dgvMain.Update();
         }
 
@@ -261,6 +303,13 @@ namespace Autopark
             dsTableAdapters.Bus_TrackTableAdapter t = new dsTableAdapters.Bus_TrackTableAdapter();
             t.Fill(ds._Bus_Track);
             dgvMain.DataSource = ds._Bus_Track;
+
+            dgvMain.Columns[1].HeaderText = "Номер";
+            dgvMain.Columns[2].HeaderText = "Марка";
+            dgvMain.Columns[3].HeaderText = "Название маршрута";
+            dgvMain.Columns[4].HeaderText = "Остановки";
+            dgvMain.Columns[5].HeaderText = "Время в пути";
+
             dgvMain.Update();
         }
 
@@ -269,6 +318,13 @@ namespace Autopark
             dsTableAdapters.All_workersTableAdapter t = new dsTableAdapters.All_workersTableAdapter();
             t.Fill(ds.All_workers);
             dgvMain.DataSource = ds.All_workers;
+
+            dgvMain.Columns[1].HeaderText = "ФИО";
+            dgvMain.Columns[2].HeaderText = "Возраст";
+            dgvMain.Columns[3].HeaderText = "Должность";
+            dgvMain.Columns[4].HeaderText = "Описание";
+            dgvMain.Columns[5].HeaderText = "Телефон";
+
             dgvMain.Update();
         }
 
@@ -277,6 +333,21 @@ namespace Autopark
             dsTableAdapters.Bus_ServiceTableAdapter t = new dsTableAdapters.Bus_ServiceTableAdapter();
             t.Fill(ds._Bus_Service);
             dgvMain.DataSource = ds._Bus_Service;
+
+            dgvMain.Columns[1].HeaderText = "Номер";
+            dgvMain.Columns[2].HeaderText = "Марка";
+            dgvMain.Columns[3].HeaderText = "Описание";
+            dgvMain.Columns[4].HeaderText = "Колёса";
+            dgvMain.Columns[5].HeaderText = "Управление";
+            dgvMain.Columns[6].HeaderText = "Тормоза";
+            dgvMain.Columns[7].HeaderText = "Двигатель";
+            dgvMain.Columns[8].HeaderText = "Экстерьер";
+            dgvMain.Columns[9].HeaderText = "Интерьер";
+            dgvMain.Columns[10].HeaderText = "Ржавчина";
+            dgvMain.Columns[11].HeaderText = "Max скорость";
+            dgvMain.Columns[12].HeaderText = "Дата создания";
+            dgvMain.Columns[13].HeaderText = "Допущен";
+
             dgvMain.Update();
         }
 
@@ -285,6 +356,19 @@ namespace Autopark
             dsTableAdapters.ServiceTableAdapter ta = new dsTableAdapters.ServiceTableAdapter();
             ta.Fill(ds.Service);
             dgvMain.DataSource = ds.Service;
+
+            dgvMain.Columns[1].HeaderText = "Описание";
+            dgvMain.Columns[2].HeaderText = "Колёса";
+            dgvMain.Columns[3].HeaderText = "Управление";
+            dgvMain.Columns[4].HeaderText = "Тормоза";
+            dgvMain.Columns[5].HeaderText = "Двигатель";
+            dgvMain.Columns[6].HeaderText = "Экстерьер";
+            dgvMain.Columns[7].HeaderText = "Интерьер";
+            dgvMain.Columns[8].HeaderText = "Ржавчина";
+            dgvMain.Columns[9].HeaderText = "Max скорость";
+            dgvMain.Columns[10].HeaderText = "Дата создания";
+            dgvMain.Columns[11].HeaderText = "Допущен";
+
             dgvMain.Update();
         }
 
@@ -326,6 +410,14 @@ namespace Autopark
             dsTableAdapters.AllTrackDoneTableAdapter ta = new dsTableAdapters.AllTrackDoneTableAdapter();
             ta.Fill(ds.AllTrackDone);
             dgvMain.DataSource = ds.AllTrackDone;
+
+            dgvMain.Columns[1].HeaderText = "Описание";
+            dgvMain.Columns[2].HeaderText = "Остановки";
+            dgvMain.Columns[3].HeaderText = "Время в пути";
+            dgvMain.Columns[4].HeaderText = "По городу";
+            dgvMain.Columns[5].HeaderText = "Дата создания";
+            dgvMain.Columns[6].HeaderText = "Одобрено";
+
             dgvMain.Update();
         }
 
