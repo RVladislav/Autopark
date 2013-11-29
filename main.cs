@@ -64,38 +64,8 @@ namespace Autopark
             frm.ShowDialog();
         }
 
-        private void lblBus_Click(object sender, EventArgs e)
-        {
-            dsTableAdapters.BusTableAdapter taBus = new dsTableAdapters.BusTableAdapter();
-            taBus.Fill(ds.Bus);
-            dgvMain.DataSource = ds.Bus;
-            dgvMain.Update();
-        }
 
 
-        private void lblWorker_Click(object sender, EventArgs e)
-        {
-            dsTableAdapters.WorkerTableAdapter taWorker = new dsTableAdapters.WorkerTableAdapter();
-            taWorker.Fill(ds.Worker);
-            dgvMain.DataSource = ds.Worker;
-            dgvMain.Update();
-        }
-
-        private void lblVacation_Click(object sender, EventArgs e)
-        {
-            dsTableAdapters.VacationTableAdapter taVacation = new dsTableAdapters.VacationTableAdapter();
-            taVacation.Fill(ds.Vacation);
-            dgvMain.DataSource = ds.Vacation;
-            dgvMain.Update();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            dsTableAdapters.TrackTableAdapter taTrack = new dsTableAdapters.TrackTableAdapter();
-            taTrack.Fill(ds.Track);
-            dgvMain.DataSource = ds.Track;
-            dgvMain.Update();
-        }
 
 
         private void dgvMain_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -103,8 +73,222 @@ namespace Autopark
             dgvMain.Columns[0].Visible = false;
         }
 
+   
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            frmWelcome frm = new frmWelcome();
+            frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK) toolAdmin.Visible = true;
+            if (frm.DialogResult == DialogResult.Cancel) Application.Exit();
+        }
 
-        private void txtFind_TextChanged(object sender, EventArgs e)
+        private void автобусыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.BusTableAdapter ta = new dsTableAdapters.BusTableAdapter();
+            ta.Fill(ds.Bus);
+            frm.dgvAdmin.DataSource = ds.Bus;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+
+            ta.Update(ds.Bus);
+        }
+
+        private void работникиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.WorkerTableAdapter ta = new dsTableAdapters.WorkerTableAdapter();
+            ta.Fill(ds.Worker);
+            frm.dgvAdmin.DataSource = ds.Worker;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+
+            ta.Update(ds.Worker);
+        }
+
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.Bus_TrackTableAdapter t = new dsTableAdapters.Bus_TrackTableAdapter();
+            t.Fill(ds._Bus_Track);
+            dgvMain.DataSource = ds._Bus_Track;
+            dgvMain.Update();
+        }
+
+
+        private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin(); 
+            dsTableAdapters.VacationTableAdapter ta = new dsTableAdapters.VacationTableAdapter();
+            ta.Fill(ds.Vacation);
+            frm.dgvAdmin.DataSource = ds.Vacation;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+
+            ta.Update(ds.Vacation);
+        }
+
+        private void маршрутыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.TrackTableAdapter ta = new dsTableAdapters.TrackTableAdapter();
+            ta.Fill(ds.Track);
+            frm.dgvAdmin.DataSource = ds.Track;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+
+            ta.Update(ds.Track);
+        }
+
+        private void тОToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.ServiceTableAdapter ta = new dsTableAdapters.ServiceTableAdapter();
+            ta.Fill(ds.Service);
+            frm.dgvAdmin.DataSource = ds.Service;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+
+            ta.Update(ds.Service);            
+        }
+
+        private void автобусыМаршрутыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.B_TTableAdapter ta = new dsTableAdapters.B_TTableAdapter();
+            ta.Fill(ds._B_T);
+            frm.dgvAdmin.DataSource = ds._B_T;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+
+            ta.Update(ds._B_T);
+        }
+
+        private void работникиАвтобусыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.B_WTableAdapter ta = new dsTableAdapters.B_WTableAdapter();
+            ta.Fill(ds._B_W);
+            frm.dgvAdmin.DataSource = ds._B_W;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+
+            ta.Update(ds._B_W);
+        }
+
+        private void работникиВакансииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frm = new frmAdmin();
+            dsTableAdapters.V_WTableAdapter ta = new dsTableAdapters.V_WTableAdapter();
+            ta.Fill(ds._V_W);
+            frm.dgvAdmin.DataSource = ds._V_W;
+            frm.dgvAdmin.Update();
+            frm.ShowDialog();
+
+            ta.Update(ds._V_W);
+        }
+
+        private void назначитьВодителяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSetDriver frm = new frmSetDriver();
+            frm.ShowDialog();
+        }
+
+        private void назначитьНаДолжностьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSetVacantion frm = new frmSetVacantion();
+            frm.ShowDialog();
+        }
+
+
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(toolAdmin.Visible==true)
+            MessageBox.Show("Режим администратора выключен", "Выход", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dgvMain_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmDescription frm = new frmDescription();
+            frm.ShowDialog();
+        }
+
+
+
+        private void btnBus_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.BusTableAdapter taBus = new dsTableAdapters.BusTableAdapter();
+            taBus.Fill(ds.Bus);
+            dgvMain.DataSource = ds.Bus;
+            dgvMain.Update();
+        }
+
+        private void btnWorkers_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.WorkerTableAdapter taWorker = new dsTableAdapters.WorkerTableAdapter();
+            taWorker.Fill(ds.Worker);
+            dgvMain.DataSource = ds.Worker;
+            dgvMain.Update();
+        }
+
+        private void btnVacations_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.VacationTableAdapter taVacation = new dsTableAdapters.VacationTableAdapter();
+            taVacation.Fill(ds.Vacation);
+            dgvMain.DataSource = ds.Vacation;
+            dgvMain.Update();
+        }
+
+        private void btnTrack_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.TrackTableAdapter taTrack = new dsTableAdapters.TrackTableAdapter();
+            taTrack.Fill(ds.Track);
+            dgvMain.DataSource = ds.Track;
+            dgvMain.Update();
+        }
+
+        private void btnDrivers_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.All_driversTableAdapter t = new dsTableAdapters.All_driversTableAdapter();
+            t.Fill(ds.All_drivers);
+            dgvMain.DataSource = ds.All_drivers;
+            dgvMain.Update();
+        }
+
+        private void btnOntheTrack_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.Bus_TrackTableAdapter t = new dsTableAdapters.Bus_TrackTableAdapter();
+            t.Fill(ds._Bus_Track);
+            dgvMain.DataSource = ds._Bus_Track;
+            dgvMain.Update();
+        }
+
+        private void btnVacationTrue_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.All_workersTableAdapter t = new dsTableAdapters.All_workersTableAdapter();
+            t.Fill(ds.All_workers);
+            dgvMain.DataSource = ds.All_workers;
+            dgvMain.Update();
+        }
+
+        private void btnBusAccess_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.Bus_ServiceTableAdapter t = new dsTableAdapters.Bus_ServiceTableAdapter();
+            t.Fill(ds._Bus_Service);
+            dgvMain.DataSource = ds._Bus_Service;
+            dgvMain.Update();
+        }
+
+        private void btnTO_Click(object sender, EventArgs e)
+        {
+            dsTableAdapters.ServiceTableAdapter ta = new dsTableAdapters.ServiceTableAdapter();
+            ta.Fill(ds.Service);
+            dgvMain.DataSource = ds.Service;
+            dgvMain.Update();
+        }
+
+        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -114,7 +298,7 @@ namespace Autopark
                 {
                     for (int j = 1; j <= countCells; j++)
                     {
-                        
+
                         string findIt = txtFind.Text;
                         //int a = findIt.Count();
                         string find = dgvMain.Rows[i].Cells[j].Value.ToString();
@@ -132,135 +316,23 @@ namespace Autopark
             }
         }
 
-   
-        private void frmMain_Load(object sender, EventArgs e)
+        private void txtFind_Click(object sender, EventArgs e)
         {
-            frmWelcome frm = new frmWelcome();            
-            frm.ShowDialog();
-            if (frm.DialogResult == DialogResult.OK) toolAdmin.Visible = true;
-            if (frm.DialogResult == DialogResult.Cancel) Application.Exit();
+            txtFind.Text = "";
         }
 
-        private void автобусыToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnTrackAccess_Click(object sender, EventArgs e)
         {
-            frmAdmin frm = new frmAdmin();
-            dsTableAdapters.BusTableAdapter ta = new dsTableAdapters.BusTableAdapter();
-            ta.Fill(ds.Bus);
-            frm.dgvAdmin.DataSource = ds.Bus;
-            frm.dgvAdmin.Update();
-            frm.ShowDialog();
-        }
-
-        private void toolAdmin_ButtonClick(object sender, EventArgs e)
-        {
-            MessageBox.Show("Режим администратора выключен", "Выход", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            toolAdmin.Visible = false;
-        }
-
-        private void работникиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAdmin frm = new frmAdmin();
-            dsTableAdapters.WorkerTableAdapter ta = new dsTableAdapters.WorkerTableAdapter();
-            ta.Fill(ds.Worker);
-            frm.dgvAdmin.DataSource = ds.Worker;
-            frm.dgvAdmin.Update();
-            frm.ShowDialog();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            dsTableAdapters.All_driversTableAdapter t = new dsTableAdapters.All_driversTableAdapter();
-            t.Fill(ds.All_drivers);
-            dgvMain.DataSource = ds.All_drivers;
+            dsTableAdapters.AllTrackDoneTableAdapter ta = new dsTableAdapters.AllTrackDoneTableAdapter();
+            ta.Fill(ds.AllTrackDone);
+            dgvMain.DataSource = ds.AllTrackDone;
             dgvMain.Update();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-            dsTableAdapters.Bus_TrackTableAdapter t = new dsTableAdapters.Bus_TrackTableAdapter();
-            t.Fill(ds._Bus_Track);
-            dgvMain.DataSource = ds._Bus_Track;
-            dgvMain.Update();
-        }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-            dsTableAdapters.Bus_ServiceTableAdapter t = new dsTableAdapters.Bus_ServiceTableAdapter();
-            t.Fill(ds._Bus_Service);
-            dgvMain.DataSource = ds._Bus_Service;
-            dgvMain.Update();
-        }
 
-        private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAdmin frm = new frmAdmin(); 
-            dsTableAdapters.VacationTableAdapter t = new dsTableAdapters.VacationTableAdapter();
-            t.Fill(ds.Vacation);
-            frm.dgvAdmin.DataSource = ds.Vacation;
-            frm.dgvAdmin.Update();
-            frm.ShowDialog();
-        }
 
-        private void маршрутыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAdmin frm = new frmAdmin();
-            dsTableAdapters.TrackTableAdapter t = new dsTableAdapters.TrackTableAdapter();
-            t.Fill(ds.Track);
-            frm.dgvAdmin.DataSource = ds.Track;
-            frm.dgvAdmin.Update();
-            frm.ShowDialog();
-        }
 
-        private void тОToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAdmin frm = new frmAdmin();
-            dsTableAdapters.ServiceTableAdapter t = new dsTableAdapters.ServiceTableAdapter();
-            t.Fill(ds.Service);
-            frm.dgvAdmin.DataSource = ds.Service;
-            frm.dgvAdmin.Update();
-            frm.ShowDialog();
-        }
 
-        private void автобусыМаршрутыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAdmin frm = new frmAdmin();
-            dsTableAdapters.Bus_TrackTableAdapter t = new dsTableAdapters.Bus_TrackTableAdapter();
-            t.Fill(ds._Bus_Track);
-            frm.dgvAdmin.DataSource = ds._Bus_Track;
-            frm.dgvAdmin.Update();
-            frm.ShowDialog();
-        }
-
-        private void работникиАвтобусыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAdmin frm = new frmAdmin();
-            dsTableAdapters.B_WTableAdapter t = new dsTableAdapters.B_WTableAdapter();
-            t.Fill(ds._B_W);
-            frm.dgvAdmin.DataSource = ds._B_W;
-            frm.dgvAdmin.Update();
-            frm.ShowDialog();
-        }
-
-        private void работникиВакансииToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAdmin frm = new frmAdmin();
-            dsTableAdapters.V_WTableAdapter t = new dsTableAdapters.V_WTableAdapter();
-            t.Fill(ds._V_W);
-            frm.dgvAdmin.DataSource = ds._V_W;
-            frm.dgvAdmin.Update();
-            frm.ShowDialog();
-        }
-
-        private void назначитьВодителяToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmSetDriver frm = new frmSetDriver();
-            frm.ShowDialog();
-        }
-
-        private void назначитьНаДолжностьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmSetVacantion frm = new frmSetVacantion();
-            frm.ShowDialog();
-        }
     }
 }

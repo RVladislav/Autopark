@@ -16,7 +16,7 @@ namespace Autopark
             InitializeComponent();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -31,13 +31,18 @@ namespace Autopark
                 fields.f6 = chbOffice.Checked;
 
                 fun.Save(fields);
+
+                dsTableAdapters.VacationTableAdapter taV = new dsTableAdapters.VacationTableAdapter();
+                taV.Update(ds.Vacation);
+
                 this.Close();
             }
             catch (Exception E)
             {
                 MessageBox.Show("Невозможно сохранить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
+
     }
 }

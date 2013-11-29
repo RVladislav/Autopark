@@ -539,18 +539,17 @@
               <DbSource ConnectionRef="cs (Settings)" DbObjectName="All drivers" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT [Worker.id], fio, [number], mark, [Bus.id] FROM [All drivers]</CommandText>
+                    <CommandText>SELECT id, fio, [number], mark FROM [All drivers]</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Worker.id" DataSetColumn="Worker_id" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="fio" DataSetColumn="fio" />
               <Mapping SourceColumn="number" DataSetColumn="number" />
               <Mapping SourceColumn="mark" DataSetColumn="mark" />
-              <Mapping SourceColumn="Bus.id" DataSetColumn="Bus_id" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -624,6 +623,27 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="All workersTableAdapter" GeneratorDataComponentClassName="All_workersTableAdapter" Name="All workers" UserDataComponentName="All workersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="All workers" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, fio, years_old, Name, Description, tel FROM [All workers]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="fio" DataSetColumn="fio" />
+              <Mapping SourceColumn="years_old" DataSetColumn="years_old" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="tel" DataSetColumn="tel" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Bus-ServiceTableAdapter" GeneratorDataComponentClassName="Bus_ServiceTableAdapter" Name="Bus-Service" UserDataComponentName="Bus-ServiceTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="cs (Settings)" DbObjectName="Bus-Service" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -671,6 +691,28 @@
               <Mapping SourceColumn="Description" DataSetColumn="Description" />
               <Mapping SourceColumn="stops" DataSetColumn="stops" />
               <Mapping SourceColumn="time(min)" DataSetColumn="time(min)" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AllTrackDoneTableAdapter" GeneratorDataComponentClassName="AllTrackDoneTableAdapter" Name="AllTrackDone" UserDataComponentName="AllTrackDoneTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="AllTrackDone" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, Description, stops, [time(min)], city, [time], Done FROM AllTrackDone</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="stops" DataSetColumn="stops" />
+              <Mapping SourceColumn="time(min)" DataSetColumn="time(min)" />
+              <Mapping SourceColumn="city" DataSetColumn="city" />
+              <Mapping SourceColumn="time" DataSetColumn="time" />
+              <Mapping SourceColumn="Done" DataSetColumn="Done" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -865,10 +907,10 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="All_x0020_drivers" msprop:Generator_TableClassName="All_driversDataTable" msprop:Generator_TableVarName="tableAll_drivers" msprop:Generator_TablePropName="All_drivers" msprop:Generator_RowDeletingName="All_driversRowDeleting" msprop:Generator_RowChangingName="All_driversRowChanging" msprop:Generator_RowEvHandlerName="All_driversRowChangeEventHandler" msprop:Generator_RowDeletedName="All_driversRowDeleted" msprop:Generator_UserTableName="All drivers" msprop:Generator_RowChangedName="All_driversRowChanged" msprop:Generator_RowEvArgName="All_driversRowChangeEvent" msprop:Generator_RowClassName="All_driversRow">
+        <xs:element name="All_x0020_drivers" msprop:Generator_TableClassName="All_driversDataTable" msprop:Generator_TableVarName="tableAll_drivers" msprop:Generator_RowChangedName="All_driversRowChanged" msprop:Generator_TablePropName="All_drivers" msprop:Generator_RowDeletingName="All_driversRowDeleting" msprop:Generator_RowChangingName="All_driversRowChanging" msprop:Generator_RowEvHandlerName="All_driversRowChangeEventHandler" msprop:Generator_RowDeletedName="All_driversRowDeleted" msprop:Generator_RowClassName="All_driversRow" msprop:Generator_UserTableName="All drivers" msprop:Generator_RowEvArgName="All_driversRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Worker_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnWorker_id" msprop:Generator_ColumnPropNameInRow="Worker_id" msprop:Generator_ColumnPropNameInTable="Worker_idColumn" msprop:Generator_UserColumnName="Worker_id" type="xs:int" minOccurs="0" />
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
               <xs:element name="fio" msprop:Generator_ColumnVarNameInTable="columnfio" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_UserColumnName="fio" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -890,11 +932,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Bus_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnBus_id" msprop:Generator_ColumnPropNameInRow="Bus_id" msprop:Generator_ColumnPropNameInTable="Bus_idColumn" msprop:Generator_UserColumnName="Bus_id" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="All_x0020_manager" msprop:Generator_TableClassName="All_managerDataTable" msprop:Generator_TableVarName="tableAll_manager" msprop:Generator_TablePropName="All_manager" msprop:Generator_RowDeletingName="All_managerRowDeleting" msprop:Generator_RowChangingName="All_managerRowChanging" msprop:Generator_RowEvHandlerName="All_managerRowChangeEventHandler" msprop:Generator_RowDeletedName="All_managerRowDeleted" msprop:Generator_UserTableName="All manager" msprop:Generator_RowChangedName="All_managerRowChanged" msprop:Generator_RowEvArgName="All_managerRowChangeEvent" msprop:Generator_RowClassName="All_managerRow">
+        <xs:element name="All_x0020_manager" msprop:Generator_TableClassName="All_managerDataTable" msprop:Generator_TableVarName="tableAll_manager" msprop:Generator_RowChangedName="All_managerRowChanged" msprop:Generator_TablePropName="All_manager" msprop:Generator_RowDeletingName="All_managerRowDeleting" msprop:Generator_RowChangingName="All_managerRowChanging" msprop:Generator_RowEvHandlerName="All_managerRowChangeEventHandler" msprop:Generator_RowDeletedName="All_managerRowDeleted" msprop:Generator_RowClassName="All_managerRow" msprop:Generator_UserTableName="All manager" msprop:Generator_RowEvArgName="All_managerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Worker_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnWorker_id" msprop:Generator_ColumnPropNameInRow="Worker_id" msprop:Generator_ColumnPropNameInTable="Worker_idColumn" msprop:Generator_UserColumnName="Worker_id" type="xs:int" minOccurs="0" />
@@ -974,7 +1015,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="All_x0020_services" msprop:Generator_TableClassName="All_servicesDataTable" msprop:Generator_TableVarName="tableAll_services" msprop:Generator_TablePropName="All_services" msprop:Generator_RowDeletingName="All_servicesRowDeleting" msprop:Generator_RowChangingName="All_servicesRowChanging" msprop:Generator_RowEvHandlerName="All_servicesRowChangeEventHandler" msprop:Generator_RowDeletedName="All_servicesRowDeleted" msprop:Generator_UserTableName="All services" msprop:Generator_RowChangedName="All_servicesRowChanged" msprop:Generator_RowEvArgName="All_servicesRowChangeEvent" msprop:Generator_RowClassName="All_servicesRow">
+        <xs:element name="All_x0020_services" msprop:Generator_TableClassName="All_servicesDataTable" msprop:Generator_TableVarName="tableAll_services" msprop:Generator_RowChangedName="All_servicesRowChanged" msprop:Generator_TablePropName="All_services" msprop:Generator_RowDeletingName="All_servicesRowDeleting" msprop:Generator_RowChangingName="All_servicesRowChanging" msprop:Generator_RowEvHandlerName="All_servicesRowChangeEventHandler" msprop:Generator_RowDeletedName="All_servicesRowDeleted" msprop:Generator_RowClassName="All_servicesRow" msprop:Generator_UserTableName="All services" msprop:Generator_RowEvArgName="All_servicesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Worker_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnWorker_id" msprop:Generator_ColumnPropNameInRow="Worker_id" msprop:Generator_ColumnPropNameInTable="Worker_idColumn" msprop:Generator_UserColumnName="Worker_id" type="xs:int" minOccurs="0" />
@@ -1054,7 +1095,43 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Bus-Service" msprop:Generator_TableClassName="_Bus_ServiceDataTable" msprop:Generator_TableVarName="_tableBus_Service" msprop:Generator_TablePropName="_Bus_Service" msprop:Generator_RowDeletingName="_Bus_ServiceRowDeleting" msprop:Generator_RowChangingName="_Bus_ServiceRowChanging" msprop:Generator_RowEvHandlerName="_Bus_ServiceRowChangeEventHandler" msprop:Generator_RowDeletedName="_Bus_ServiceRowDeleted" msprop:Generator_UserTableName="Bus-Service" msprop:Generator_RowChangedName="_Bus_ServiceRowChanged" msprop:Generator_RowEvArgName="_Bus_ServiceRowChangeEvent" msprop:Generator_RowClassName="_Bus_ServiceRow">
+        <xs:element name="All_x0020_workers" msprop:Generator_TableClassName="All_workersDataTable" msprop:Generator_TableVarName="tableAll_workers" msprop:Generator_RowChangedName="All_workersRowChanged" msprop:Generator_TablePropName="All_workers" msprop:Generator_RowDeletingName="All_workersRowDeleting" msprop:Generator_RowChangingName="All_workersRowChanging" msprop:Generator_RowEvHandlerName="All_workersRowChangeEventHandler" msprop:Generator_RowDeletedName="All_workersRowDeleted" msprop:Generator_RowClassName="All_workersRow" msprop:Generator_UserTableName="All workers" msprop:Generator_RowEvArgName="All_workersRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="fio" msprop:Generator_ColumnVarNameInTable="columnfio" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_UserColumnName="fio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="years_old" msprop:Generator_ColumnVarNameInTable="columnyears_old" msprop:Generator_ColumnPropNameInRow="years_old" msprop:Generator_ColumnPropNameInTable="years_oldColumn" msprop:Generator_UserColumnName="years_old" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tel" msprop:Generator_ColumnVarNameInTable="columntel" msprop:Generator_ColumnPropNameInRow="tel" msprop:Generator_ColumnPropNameInTable="telColumn" msprop:Generator_UserColumnName="tel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Bus-Service" msprop:Generator_TableClassName="_Bus_ServiceDataTable" msprop:Generator_TableVarName="_tableBus_Service" msprop:Generator_RowChangedName="_Bus_ServiceRowChanged" msprop:Generator_TablePropName="_Bus_Service" msprop:Generator_RowDeletingName="_Bus_ServiceRowDeleting" msprop:Generator_RowChangingName="_Bus_ServiceRowChanging" msprop:Generator_RowEvHandlerName="_Bus_ServiceRowChangeEventHandler" msprop:Generator_RowDeletedName="_Bus_ServiceRowDeleted" msprop:Generator_RowClassName="_Bus_ServiceRow" msprop:Generator_UserTableName="Bus-Service" msprop:Generator_RowEvArgName="_Bus_ServiceRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
@@ -1092,7 +1169,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Bus-Track" msprop:Generator_TableClassName="_Bus_TrackDataTable" msprop:Generator_TableVarName="_tableBus_Track" msprop:Generator_TablePropName="_Bus_Track" msprop:Generator_RowDeletingName="_Bus_TrackRowDeleting" msprop:Generator_RowChangingName="_Bus_TrackRowChanging" msprop:Generator_RowEvHandlerName="_Bus_TrackRowChangeEventHandler" msprop:Generator_RowDeletedName="_Bus_TrackRowDeleted" msprop:Generator_UserTableName="Bus-Track" msprop:Generator_RowChangedName="_Bus_TrackRowChanged" msprop:Generator_RowEvArgName="_Bus_TrackRowChangeEvent" msprop:Generator_RowClassName="_Bus_TrackRow">
+        <xs:element name="Bus-Track" msprop:Generator_TableClassName="_Bus_TrackDataTable" msprop:Generator_TableVarName="_tableBus_Track" msprop:Generator_RowChangedName="_Bus_TrackRowChanged" msprop:Generator_TablePropName="_Bus_Track" msprop:Generator_RowDeletingName="_Bus_TrackRowDeleting" msprop:Generator_RowChangingName="_Bus_TrackRowChanging" msprop:Generator_RowEvHandlerName="_Bus_TrackRowChangeEventHandler" msprop:Generator_RowDeletedName="_Bus_TrackRowDeleted" msprop:Generator_RowClassName="_Bus_TrackRow" msprop:Generator_UserTableName="Bus-Track" msprop:Generator_RowEvArgName="_Bus_TrackRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
@@ -1128,6 +1205,31 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="AllTrackDone" msprop:Generator_TableClassName="AllTrackDoneDataTable" msprop:Generator_TableVarName="tableAllTrackDone" msprop:Generator_TablePropName="AllTrackDone" msprop:Generator_RowDeletingName="AllTrackDoneRowDeleting" msprop:Generator_RowChangingName="AllTrackDoneRowChanging" msprop:Generator_RowEvHandlerName="AllTrackDoneRowChangeEventHandler" msprop:Generator_RowDeletedName="AllTrackDoneRowDeleted" msprop:Generator_UserTableName="AllTrackDone" msprop:Generator_RowChangedName="AllTrackDoneRowChanged" msprop:Generator_RowEvArgName="AllTrackDoneRowChangeEvent" msprop:Generator_RowClassName="AllTrackDoneRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="stops" msprop:Generator_ColumnVarNameInTable="columnstops" msprop:Generator_ColumnPropNameInRow="stops" msprop:Generator_ColumnPropNameInTable="stopsColumn" msprop:Generator_UserColumnName="stops" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="time_x0028_min_x0029_" msprop:Generator_ColumnVarNameInTable="_columntime_min_" msprop:Generator_ColumnPropNameInRow="_time_min_" msprop:Generator_ColumnPropNameInTable="_time_min_Column" msprop:Generator_UserColumnName="time(min)" type="xs:int" minOccurs="0" />
+              <xs:element name="city" msprop:Generator_ColumnVarNameInTable="columncity" msprop:Generator_ColumnPropNameInRow="city" msprop:Generator_ColumnPropNameInTable="cityColumn" msprop:Generator_UserColumnName="city" type="xs:boolean" minOccurs="0" />
+              <xs:element name="time" msprop:Generator_ColumnVarNameInTable="columntime" msprop:Generator_ColumnPropNameInRow="time" msprop:Generator_ColumnPropNameInTable="timeColumn" msprop:Generator_UserColumnName="time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Done" msprop:Generator_ColumnVarNameInTable="columnDone" msprop:Generator_ColumnPropNameInRow="Done" msprop:Generator_ColumnPropNameInTable="DoneColumn" msprop:Generator_UserColumnName="Done" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1148,6 +1250,10 @@
     </xs:unique>
     <xs:unique name="Vacation_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Vacation" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="AllTrackDone_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AllTrackDone" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>

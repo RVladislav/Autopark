@@ -16,14 +16,21 @@ namespace Autopark
             InitializeComponent();
         }
 
+
+
+        private void frmWelcome_Load(object sender, EventArgs e)
+        {
+            txtLogin.Select();
+        }
+
         private void btnEnter_Click(object sender, EventArgs e)
         {
             string login = txtLogin.Text;
             string password = txtPassword.Text;
             if (login == "admin" && password == "admin")
             {
-                this.DialogResult = DialogResult.OK; 
-                this.Close();              
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             if (login == "user" && password == "user")
             {
@@ -31,6 +38,8 @@ namespace Autopark
                 this.Close();
             }
         }
+
+
 
     }
 }

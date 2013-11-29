@@ -30,133 +30,117 @@
         {
             this.components = new System.ComponentModel.Container();
             this.cmbDriver = new System.Windows.Forms.ComboBox();
-            this.allDriversBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ds = new Autopark.ds();
-            this.allDriversBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.allDriversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmdBus = new System.Windows.Forms.ComboBox();
-            this.allDriversBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.btnNo = new System.Windows.Forms.Button();
-            this.all_driversTableAdapter = new Autopark.dsTableAdapters.All_driversTableAdapter();
-            this.btnYes = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.allDriversBindingSource2)).BeginInit();
+            this.cmbBus = new System.Windows.Forms.ComboBox();
+            this.busBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.busTableAdapter = new Autopark.dsTableAdapters.BusTableAdapter();
+            this.workerTableAdapter = new Autopark.dsTableAdapters.WorkerTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allDriversBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allDriversBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allDriversBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbDriver
             // 
-            this.cmbDriver.DataSource = this.allDriversBindingSource2;
+            this.cmbDriver.DataSource = this.workerBindingSource;
             this.cmbDriver.DisplayMember = "fio";
             this.cmbDriver.FormattingEnabled = true;
             this.cmbDriver.Location = new System.Drawing.Point(11, 25);
             this.cmbDriver.Name = "cmbDriver";
-            this.cmbDriver.Size = new System.Drawing.Size(287, 21);
+            this.cmbDriver.Size = new System.Drawing.Size(336, 21);
             this.cmbDriver.TabIndex = 0;
-            this.cmbDriver.ValueMember = "Worker_id";
+            this.cmbDriver.ValueMember = "id";
             // 
-            // allDriversBindingSource2
+            // workerBindingSource
             // 
-            this.allDriversBindingSource2.DataMember = "All drivers";
-            this.allDriversBindingSource2.DataSource = this.ds;
+            this.workerBindingSource.DataMember = "Worker";
+            this.workerBindingSource.DataSource = this.ds;
             // 
             // ds
             // 
             this.ds.DataSetName = "ds";
             this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // allDriversBindingSource1
-            // 
-            this.allDriversBindingSource1.DataMember = "All drivers";
-            this.allDriversBindingSource1.DataSource = this.ds;
-            // 
-            // allDriversBindingSource
-            // 
-            this.allDriversBindingSource.DataMember = "All drivers";
-            this.allDriversBindingSource.DataSource = this.ds;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Водители";
+            this.label1.Text = "Работник";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Автобусы";
+            this.label2.Text = "Автобус";
             // 
-            // cmdBus
+            // cmbBus
             // 
-            this.cmdBus.DataSource = this.allDriversBindingSource3;
-            this.cmdBus.DisplayMember = "number";
-            this.cmdBus.FormattingEnabled = true;
-            this.cmdBus.Location = new System.Drawing.Point(11, 65);
-            this.cmdBus.Name = "cmdBus";
-            this.cmdBus.Size = new System.Drawing.Size(287, 21);
-            this.cmdBus.TabIndex = 3;
-            this.cmdBus.ValueMember = "Bus_id";
+            this.cmbBus.DataSource = this.busBindingSource;
+            this.cmbBus.DisplayMember = "number";
+            this.cmbBus.FormattingEnabled = true;
+            this.cmbBus.Location = new System.Drawing.Point(11, 65);
+            this.cmbBus.Name = "cmbBus";
+            this.cmbBus.Size = new System.Drawing.Size(336, 21);
+            this.cmbBus.TabIndex = 3;
+            this.cmbBus.ValueMember = "id";
             // 
-            // allDriversBindingSource3
+            // busBindingSource
             // 
-            this.allDriversBindingSource3.DataMember = "All drivers";
-            this.allDriversBindingSource3.DataSource = this.ds;
+            this.busBindingSource.DataMember = "Bus";
+            this.busBindingSource.DataSource = this.ds;
             // 
-            // btnNo
+            // busTableAdapter
             // 
-            this.btnNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNo.Location = new System.Drawing.Point(168, 92);
-            this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(130, 23);
-            this.btnNo.TabIndex = 4;
-            this.btnNo.Text = "Убрать водителя";
-            this.btnNo.UseVisualStyleBackColor = true;
+            this.busTableAdapter.ClearBeforeFill = true;
             // 
-            // all_driversTableAdapter
+            // workerTableAdapter
             // 
-            this.all_driversTableAdapter.ClearBeforeFill = true;
+            this.workerTableAdapter.ClearBeforeFill = true;
             // 
-            // btnYes
+            // button1
             // 
-            this.btnYes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnYes.Location = new System.Drawing.Point(11, 92);
-            this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new System.Drawing.Size(151, 23);
-            this.btnYes.TabIndex = 5;
-            this.btnYes.Text = "Назначить водителем";
-            this.btnYes.UseVisualStyleBackColor = true;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(167, 92);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 30);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Назначить водителем";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmSetDriver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 155);
-            this.Controls.Add(this.btnYes);
-            this.Controls.Add(this.btnNo);
-            this.Controls.Add(this.cmdBus);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(359, 127);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmbBus);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbDriver);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSetDriver";
             this.Text = "Водители и автобусы";
             this.Load += new System.EventHandler(this.frmSetDriver_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.allDriversBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allDriversBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allDriversBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allDriversBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,14 +151,12 @@
         private System.Windows.Forms.ComboBox cmbDriver;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmdBus;
-        private System.Windows.Forms.Button btnNo;
+        private System.Windows.Forms.ComboBox cmbBus;
         private ds ds;
-        private System.Windows.Forms.BindingSource allDriversBindingSource;
-        private Autopark.dsTableAdapters.All_driversTableAdapter all_driversTableAdapter;
-        private System.Windows.Forms.BindingSource allDriversBindingSource1;
-        private System.Windows.Forms.BindingSource allDriversBindingSource2;
-        private System.Windows.Forms.BindingSource allDriversBindingSource3;
-        private System.Windows.Forms.Button btnYes;
+        private System.Windows.Forms.BindingSource busBindingSource;
+        private dsTableAdapters.BusTableAdapter busTableAdapter;
+        private System.Windows.Forms.BindingSource workerBindingSource;
+        private dsTableAdapters.WorkerTableAdapter workerTableAdapter;
+        private System.Windows.Forms.Button button1;
     }
 }

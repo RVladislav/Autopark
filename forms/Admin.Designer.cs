@@ -38,6 +38,7 @@
             this.dgvAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAdmin.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdmin.Location = new System.Drawing.Point(12, 12);
             this.dgvAdmin.Name = "dgvAdmin";
@@ -48,6 +49,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(760, 460);
             this.Controls.Add(this.dgvAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;

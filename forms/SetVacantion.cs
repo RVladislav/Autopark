@@ -16,25 +16,7 @@ namespace Autopark
             InitializeComponent();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    DB_functions fun = new DB_functions();
-            //    DB_functions.LinkVacantion lv=new DB_functions.LinkVacantion();
 
-            //    lv.f1 = int.Parse(cmbWorker.SelectedValue.ToString());
-            //    lv.f2 = int.Parse(cmbVacantions.SelectedValue.ToString());
-
-            //    fun.Save(lv);
-
-            //    this.Close();
-            //}
-            //catch (Exception E)
-            //{
-            //    MessageBox.Show("Ошибка чтения/записи", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-        }
 
         private void frmSetVacantion_Load(object sender, EventArgs e)
         {
@@ -45,24 +27,31 @@ namespace Autopark
 
         }
 
-        private void btnYes_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    DB_functions fun = new DB_functions();
-            //    DB_functions.LinkVacantion lv = new DB_functions.LinkVacantion();
+            try
+            {
+                DB_functions fun = new DB_functions();
+                DB_functions.LinkVacantion lv = new DB_functions.LinkVacantion();
 
-            //    lv.f1 = int.Parse(cmbWorker.SelectedValue.ToString());
-            //    lv.f2 = int.Parse(cmbVacantions.SelectedValue.ToString());
+                lv.f1 = int.Parse(cmbWorker.SelectedValue.ToString());
+                lv.f2 = int.Parse(cmbVacantions.SelectedValue.ToString());
 
-            //    fun.Save(lv);
+                fun.Save(lv);
 
-            //    this.Close();
-            //}
-            //catch (Exception E)
-            //{
-            //    MessageBox.Show("Ошибка чтения/записи", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                dsTableAdapters.V_WTableAdapter taWV = new dsTableAdapters.V_WTableAdapter();
+                taWV.Update(ds._V_W);
+
+                this.Close();
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Невозможно сохранить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
+
+
     }
 }

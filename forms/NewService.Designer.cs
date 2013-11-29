@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnSave = new System.Windows.Forms.Button();
             this.lblBus = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.ds = new Autopark.ds();
@@ -37,7 +36,6 @@
             this.busTableAdapter = new Autopark.dsTableAdapters.BusTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbBus = new System.Windows.Forms.ComboBox();
-            this.busBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cmbDone = new System.Windows.Forms.CheckBox();
             this.cmbWhells = new System.Windows.Forms.CheckBox();
             this.cmbControl = new System.Windows.Forms.CheckBox();
@@ -51,27 +49,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpCreate = new System.Windows.Forms.DateTimePicker();
             this.grpTest = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource1)).BeginInit();
             this.grpTest.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(372, 569);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Сохранить";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblBus
             // 
             this.lblBus.AutoSize = true;
-            this.lblBus.Location = new System.Drawing.Point(12, 23);
+            this.lblBus.Location = new System.Drawing.Point(12, 9);
             this.lblBus.Name = "lblBus";
             this.lblBus.Size = new System.Drawing.Size(90, 13);
             this.lblBus.TabIndex = 8;
@@ -79,9 +66,10 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(12, 89);
+            this.txtDescription.Location = new System.Drawing.Point(15, 255);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescription.Size = new System.Drawing.Size(431, 150);
             this.txtDescription.TabIndex = 10;
             // 
@@ -102,7 +90,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 73);
+            this.label2.Location = new System.Drawing.Point(12, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 14;
@@ -110,24 +98,19 @@
             // 
             // cmbBus
             // 
-            this.cmbBus.DataSource = this.busBindingSource1;
+            this.cmbBus.DataSource = this.busBindingSource;
             this.cmbBus.DisplayMember = "number";
             this.cmbBus.FormattingEnabled = true;
-            this.cmbBus.Location = new System.Drawing.Point(108, 20);
+            this.cmbBus.Location = new System.Drawing.Point(108, 6);
             this.cmbBus.Name = "cmbBus";
             this.cmbBus.Size = new System.Drawing.Size(171, 21);
             this.cmbBus.TabIndex = 15;
             this.cmbBus.ValueMember = "id";
             // 
-            // busBindingSource1
-            // 
-            this.busBindingSource1.DataMember = "Bus";
-            this.busBindingSource1.DataSource = this.ds;
-            // 
             // cmbDone
             // 
             this.cmbDone.AutoSize = true;
-            this.cmbDone.Location = new System.Drawing.Point(12, 573);
+            this.cmbDone.Location = new System.Drawing.Point(12, 536);
             this.cmbDone.Name = "cmbDone";
             this.cmbDone.Size = new System.Drawing.Size(73, 17);
             this.cmbDone.TabIndex = 16;
@@ -207,7 +190,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 477);
+            this.label1.Location = new System.Drawing.Point(12, 428);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 13);
             this.label1.TabIndex = 24;
@@ -215,7 +198,7 @@
             // 
             // txtSpeed
             // 
-            this.txtSpeed.Location = new System.Drawing.Point(152, 474);
+            this.txtSpeed.Location = new System.Drawing.Point(152, 425);
             this.txtSpeed.Name = "txtSpeed";
             this.txtSpeed.Size = new System.Drawing.Size(100, 20);
             this.txtSpeed.TabIndex = 25;
@@ -223,7 +206,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 514);
+            this.label3.Location = new System.Drawing.Point(12, 470);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 26;
@@ -232,7 +215,7 @@
             // dtpCreate
             // 
             this.dtpCreate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpCreate.Location = new System.Drawing.Point(99, 507);
+            this.dtpCreate.Location = new System.Drawing.Point(152, 464);
             this.dtpCreate.Name = "dtpCreate";
             this.dtpCreate.Size = new System.Drawing.Size(150, 20);
             this.dtpCreate.TabIndex = 27;
@@ -246,18 +229,34 @@
             this.grpTest.Controls.Add(this.cmbExterier);
             this.grpTest.Controls.Add(this.cmbRust);
             this.grpTest.Controls.Add(this.cmbInterier);
-            this.grpTest.Location = new System.Drawing.Point(12, 258);
+            this.grpTest.Location = new System.Drawing.Point(15, 33);
             this.grpTest.Name = "grpTest";
             this.grpTest.Size = new System.Drawing.Size(200, 188);
             this.grpTest.TabIndex = 28;
             this.grpTest.TabStop = false;
             this.grpTest.Text = "Тесты";
             // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSave.Location = new System.Drawing.Point(353, 528);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 30);
+            this.btnSave.TabIndex = 29;
+            this.btnSave.Text = "Сохранить";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // frmNewService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 606);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(455, 567);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grpTest);
             this.Controls.Add(this.dtpCreate);
             this.Controls.Add(this.label3);
@@ -268,14 +267,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblBus);
-            this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmNewService";
             this.Text = "Новое техническое обслуживание";
             this.Load += new System.EventHandler(this.frmNewService_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource1)).EndInit();
             this.grpTest.ResumeLayout(false);
             this.grpTest.PerformLayout();
             this.ResumeLayout(false);
@@ -285,7 +282,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblBus;
         private System.Windows.Forms.TextBox txtDescription;
         private ds ds;
@@ -293,7 +289,6 @@
         private dsTableAdapters.BusTableAdapter busTableAdapter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbBus;
-        private System.Windows.Forms.BindingSource busBindingSource1;
         private System.Windows.Forms.CheckBox cmbDone;
         private System.Windows.Forms.CheckBox cmbWhells;
         private System.Windows.Forms.CheckBox cmbControl;
@@ -307,5 +302,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpCreate;
         private System.Windows.Forms.GroupBox grpTest;
+        private System.Windows.Forms.Button btnSave;
     }
 }

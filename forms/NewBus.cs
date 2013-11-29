@@ -20,10 +20,13 @@ namespace Autopark
         {
             // TODO: This line of code loads data into the 'ds.Bus' table. You can move, or remove it, as needed.
             this.busTableAdapter.Fill(this.ds.Bus);
-            // TODO: This line of code loads data into the 'ds.Track' table. You can move, or remove it, as needed.
-            this.trackTableAdapter.Fill(this.ds.Track);
             // TODO: This line of code loads data into the 'ds.All_drivers' table. You can move, or remove it, as needed.
             this.all_driversTableAdapter.Fill(this.ds.All_drivers);
+            // TODO: This line of code loads data into the 'ds.All_drivers' table. You can move, or remove it, as needed.
+            
+            // TODO: This line of code loads data into the 'ds.Track' table. You can move, or remove it, as needed.
+            this.trackTableAdapter.Fill(this.ds.Track);
+            txtNumber.Select();
 
         }
 
@@ -61,6 +64,11 @@ namespace Autopark
                 bt.f2 = int.Parse(cmbTrack.SelectedValue.ToString());
 
                 fun.Save(bt);
+
+                dsTableAdapters.BusTableAdapter taB = new dsTableAdapters.BusTableAdapter();
+                dsTableAdapters.B_TTableAdapter taBT = new dsTableAdapters.B_TTableAdapter();
+                taB.Update(ds.Bus);
+                taBT.Update(ds._B_T);
 
                 this.Close();
             }

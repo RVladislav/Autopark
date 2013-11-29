@@ -16,12 +16,7 @@ namespace Autopark
             InitializeComponent();
         }
 
-        private void frmNewWorker_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'ds.Vacation' table. You can move, or remove it, as needed.
-            this.vacationTableAdapter.Fill(this.ds.Vacation);
 
-        }
 
         private void btnNewVacation_Click(object sender, EventArgs e)
         {
@@ -29,9 +24,8 @@ namespace Autopark
             frm.ShowDialog();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 DB_functions fun = new DB_functions();
@@ -52,14 +46,18 @@ namespace Autopark
                 fields.f12 = txtOthers.Text;
 
                 fun.Save(fields);
-                
+
+                dsTableAdapters.V_WTableAdapter taWV = new dsTableAdapters.V_WTableAdapter();
+                taWV.Update(ds._V_W);
+
                 this.Close();
             }
             catch (Exception E)
             {
                 MessageBox.Show("Невозможно сохранить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
+
     }
 }

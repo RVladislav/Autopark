@@ -45,6 +45,10 @@ namespace Autopark
                 fields.f11 = cmbDone.Checked;
 
                 fun.Save(fields);
+
+                dsTableAdapters.ServiceTableAdapter taS = new dsTableAdapters.ServiceTableAdapter();
+                taS.Update(ds.Service);
+
                 this.Close();
             }
             catch (Exception E)
@@ -52,6 +56,7 @@ namespace Autopark
                 MessageBox.Show("Невозможно сохранить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
      
     }

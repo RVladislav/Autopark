@@ -38,6 +38,8 @@
             this.toolbtnVacation = new System.Windows.Forms.ToolStripMenuItem();
             this.новыйМаршрутToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.новоеСервисноеОбслуживаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.назначитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.назначитьНаДолжностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.классическийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.модернToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,21 +55,21 @@
             this.автобусыМаршрутыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.работникиАвтобусыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.работникиВакансииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtFind = new System.Windows.Forms.ToolStripTextBox();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblVacation = new System.Windows.Forms.Label();
-            this.lblWorker = new System.Windows.Forms.Label();
-            this.lblBus = new System.Windows.Forms.Label();
+            this.btnTO = new System.Windows.Forms.Button();
+            this.btnBusAccess = new System.Windows.Forms.Button();
+            this.btnVacationTrue = new System.Windows.Forms.Button();
+            this.btnOntheTrack = new System.Windows.Forms.Button();
+            this.btnDrivers = new System.Windows.Forms.Button();
+            this.btnTrack = new System.Windows.Forms.Button();
+            this.btnVacations = new System.Windows.Forms.Button();
+            this.btnWorkers = new System.Windows.Forms.Button();
+            this.btnBus = new System.Windows.Forms.Button();
             this.dgvMain = new System.Windows.Forms.DataGridView();
-            this.txtFind = new System.Windows.Forms.TextBox();
-            this.lblFind = new System.Windows.Forms.Label();
             this.ds = new Autopark.ds();
-            this.назначитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.назначитьНаДолжностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTrackAccess = new System.Windows.Forms.Button();
             this.toolStrip.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
@@ -82,11 +84,12 @@
             this.toolbtnEdit,
             this.toolStripDropDownButton1,
             this.toolbtnAboutProduction,
-            this.toolAdmin});
+            this.toolAdmin,
+            this.txtFind});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip.Size = new System.Drawing.Size(785, 25);
+            this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStrip.Size = new System.Drawing.Size(1103, 25);
             this.toolStrip.TabIndex = 0;
             // 
             // toolbtnFile
@@ -127,37 +130,51 @@
             // toolbtnNewBus
             // 
             this.toolbtnNewBus.Name = "toolbtnNewBus";
-            this.toolbtnNewBus.Size = new System.Drawing.Size(171, 22);
+            this.toolbtnNewBus.Size = new System.Drawing.Size(211, 22);
             this.toolbtnNewBus.Text = "Новый автобус";
             this.toolbtnNewBus.Click += new System.EventHandler(this.toolbtnNewBus_Click);
             // 
             // toolbtnWorker
             // 
             this.toolbtnWorker.Name = "toolbtnWorker";
-            this.toolbtnWorker.Size = new System.Drawing.Size(171, 22);
+            this.toolbtnWorker.Size = new System.Drawing.Size(211, 22);
             this.toolbtnWorker.Text = "Новый работник";
             this.toolbtnWorker.Click += new System.EventHandler(this.toolbtnWorker_Click);
             // 
             // toolbtnVacation
             // 
             this.toolbtnVacation.Name = "toolbtnVacation";
-            this.toolbtnVacation.Size = new System.Drawing.Size(171, 22);
+            this.toolbtnVacation.Size = new System.Drawing.Size(211, 22);
             this.toolbtnVacation.Text = "Новая должность";
             this.toolbtnVacation.Click += new System.EventHandler(this.toolbtnVacation_Click);
             // 
             // новыйМаршрутToolStripMenuItem
             // 
             this.новыйМаршрутToolStripMenuItem.Name = "новыйМаршрутToolStripMenuItem";
-            this.новыйМаршрутToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.новыйМаршрутToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.новыйМаршрутToolStripMenuItem.Text = "Новый маршрут";
             this.новыйМаршрутToolStripMenuItem.Click += new System.EventHandler(this.новыйМаршрутToolStripMenuItem_Click);
             // 
             // новоеСервисноеОбслуживаниеToolStripMenuItem
             // 
             this.новоеСервисноеОбслуживаниеToolStripMenuItem.Name = "новоеСервисноеОбслуживаниеToolStripMenuItem";
-            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.новоеСервисноеОбслуживаниеToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.новоеСервисноеОбслуживаниеToolStripMenuItem.Text = "Новое ТО";
             this.новоеСервисноеОбслуживаниеToolStripMenuItem.Click += new System.EventHandler(this.новоеСервисноеОбслуживаниеToolStripMenuItem_Click);
+            // 
+            // назначитьВодителяToolStripMenuItem
+            // 
+            this.назначитьВодителяToolStripMenuItem.Name = "назначитьВодителяToolStripMenuItem";
+            this.назначитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.назначитьВодителяToolStripMenuItem.Text = "Назначить водителя";
+            this.назначитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.назначитьВодителяToolStripMenuItem_Click);
+            // 
+            // назначитьНаДолжностьToolStripMenuItem
+            // 
+            this.назначитьНаДолжностьToolStripMenuItem.Name = "назначитьНаДолжностьToolStripMenuItem";
+            this.назначитьНаДолжностьToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.назначитьНаДолжностьToolStripMenuItem.Text = "Назначить на должность";
+            this.назначитьНаДолжностьToolStripMenuItem.Click += new System.EventHandler(this.назначитьНаДолжностьToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton1
             // 
@@ -226,7 +243,6 @@
             this.toolAdmin.Size = new System.Drawing.Size(110, 22);
             this.toolAdmin.Text = "Администратор";
             this.toolAdmin.Visible = false;
-            this.toolAdmin.ButtonClick += new System.EventHandler(this.toolAdmin_ButtonClick);
             // 
             // автобусыToolStripMenuItem
             // 
@@ -284,107 +300,167 @@
             this.работникиВакансииToolStripMenuItem.Text = "Работники -> Вакансии";
             this.работникиВакансииToolStripMenuItem.Click += new System.EventHandler(this.работникиВакансииToolStripMenuItem_Click);
             // 
+            // txtFind
+            // 
+            this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(170, 25);
+            this.txtFind.Text = "Поиск";
+            this.txtFind.Click += new System.EventHandler(this.txtFind_Click);
+            this.txtFind.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
+            // 
             // statusStrip
             // 
             this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.statusStrip.Location = new System.Drawing.Point(0, 462);
+            this.statusStrip.Location = new System.Drawing.Point(0, 485);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(785, 0);
+            this.statusStrip.Size = new System.Drawing.Size(1103, 0);
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip1";
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlMenu.Controls.Add(this.label5);
-            this.pnlMenu.Controls.Add(this.label4);
-            this.pnlMenu.Controls.Add(this.label3);
-            this.pnlMenu.Controls.Add(this.label1);
-            this.pnlMenu.Controls.Add(this.lblVacation);
-            this.pnlMenu.Controls.Add(this.lblWorker);
-            this.pnlMenu.Controls.Add(this.lblBus);
+            this.pnlMenu.Controls.Add(this.btnTrackAccess);
+            this.pnlMenu.Controls.Add(this.btnTO);
+            this.pnlMenu.Controls.Add(this.btnBusAccess);
+            this.pnlMenu.Controls.Add(this.btnVacationTrue);
+            this.pnlMenu.Controls.Add(this.btnOntheTrack);
+            this.pnlMenu.Controls.Add(this.btnDrivers);
+            this.pnlMenu.Controls.Add(this.btnTrack);
+            this.pnlMenu.Controls.Add(this.btnVacations);
+            this.pnlMenu.Controls.Add(this.btnWorkers);
+            this.pnlMenu.Controls.Add(this.btnBus);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 25);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(167, 437);
+            this.pnlMenu.Size = new System.Drawing.Size(227, 460);
             this.pnlMenu.TabIndex = 2;
             // 
-            // label5
+            // btnTO
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(3, 162);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 24);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "ТО на автобусы";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.btnTO.FlatAppearance.BorderSize = 0;
+            this.btnTO.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnTO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnTO.Location = new System.Drawing.Point(3, 309);
+            this.btnTO.Name = "btnTO";
+            this.btnTO.Size = new System.Drawing.Size(215, 28);
+            this.btnTO.TabIndex = 23;
+            this.btnTO.Text = "ТО";
+            this.btnTO.UseVisualStyleBackColor = true;
+            this.btnTO.Click += new System.EventHandler(this.btnTO_Click);
             // 
-            // label4
+            // btnBusAccess
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(3, 239);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 24);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "На маршруте";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.btnBusAccess.FlatAppearance.BorderSize = 0;
+            this.btnBusAccess.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnBusAccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusAccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnBusAccess.Location = new System.Drawing.Point(3, 241);
+            this.btnBusAccess.Name = "btnBusAccess";
+            this.btnBusAccess.Size = new System.Drawing.Size(215, 28);
+            this.btnBusAccess.TabIndex = 22;
+            this.btnBusAccess.Text = "Допущенные автобусы";
+            this.btnBusAccess.UseVisualStyleBackColor = true;
+            this.btnBusAccess.Click += new System.EventHandler(this.btnBusAccess_Click);
             // 
-            // label3
+            // btnVacationTrue
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(3, 200);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 24);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Водители";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.btnVacationTrue.FlatAppearance.BorderSize = 0;
+            this.btnVacationTrue.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnVacationTrue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVacationTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnVacationTrue.Location = new System.Drawing.Point(3, 207);
+            this.btnVacationTrue.Name = "btnVacationTrue";
+            this.btnVacationTrue.Size = new System.Drawing.Size(215, 28);
+            this.btnVacationTrue.TabIndex = 21;
+            this.btnVacationTrue.Text = "Должностные";
+            this.btnVacationTrue.UseVisualStyleBackColor = true;
+            this.btnVacationTrue.Click += new System.EventHandler(this.btnVacationTrue_Click);
             // 
-            // label1
+            // btnOntheTrack
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 126);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 24);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Маршруты";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.btnOntheTrack.FlatAppearance.BorderSize = 0;
+            this.btnOntheTrack.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnOntheTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOntheTrack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnOntheTrack.Location = new System.Drawing.Point(3, 173);
+            this.btnOntheTrack.Name = "btnOntheTrack";
+            this.btnOntheTrack.Size = new System.Drawing.Size(215, 28);
+            this.btnOntheTrack.TabIndex = 20;
+            this.btnOntheTrack.Text = "На маршруте";
+            this.btnOntheTrack.UseVisualStyleBackColor = true;
+            this.btnOntheTrack.Click += new System.EventHandler(this.btnOntheTrack_Click);
             // 
-            // lblVacation
+            // btnDrivers
             // 
-            this.lblVacation.AutoSize = true;
-            this.lblVacation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblVacation.Location = new System.Drawing.Point(3, 88);
-            this.lblVacation.Name = "lblVacation";
-            this.lblVacation.Size = new System.Drawing.Size(112, 24);
-            this.lblVacation.TabIndex = 5;
-            this.lblVacation.Text = "Должности";
-            this.lblVacation.Click += new System.EventHandler(this.lblVacation_Click);
+            this.btnDrivers.FlatAppearance.BorderSize = 0;
+            this.btnDrivers.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDrivers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrivers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDrivers.Location = new System.Drawing.Point(3, 139);
+            this.btnDrivers.Name = "btnDrivers";
+            this.btnDrivers.Size = new System.Drawing.Size(215, 28);
+            this.btnDrivers.TabIndex = 19;
+            this.btnDrivers.Text = "Водители";
+            this.btnDrivers.UseVisualStyleBackColor = true;
+            this.btnDrivers.Click += new System.EventHandler(this.btnDrivers_Click);
             // 
-            // lblWorker
+            // btnTrack
             // 
-            this.lblWorker.AutoSize = true;
-            this.lblWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblWorker.Location = new System.Drawing.Point(3, 50);
-            this.lblWorker.Name = "lblWorker";
-            this.lblWorker.Size = new System.Drawing.Size(106, 24);
-            this.lblWorker.TabIndex = 4;
-            this.lblWorker.Text = "Работники";
-            this.lblWorker.Click += new System.EventHandler(this.lblWorker_Click);
+            this.btnTrack.FlatAppearance.BorderSize = 0;
+            this.btnTrack.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnTrack.Location = new System.Drawing.Point(3, 105);
+            this.btnTrack.Name = "btnTrack";
+            this.btnTrack.Size = new System.Drawing.Size(215, 28);
+            this.btnTrack.TabIndex = 18;
+            this.btnTrack.Text = "Маршруты";
+            this.btnTrack.UseVisualStyleBackColor = true;
+            this.btnTrack.Click += new System.EventHandler(this.btnTrack_Click);
             // 
-            // lblBus
+            // btnVacations
             // 
-            this.lblBus.AutoSize = true;
-            this.lblBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblBus.Location = new System.Drawing.Point(3, 12);
-            this.lblBus.Name = "lblBus";
-            this.lblBus.Size = new System.Drawing.Size(98, 24);
-            this.lblBus.TabIndex = 3;
-            this.lblBus.Text = "Автобусы";
-            this.lblBus.Click += new System.EventHandler(this.lblBus_Click);
+            this.btnVacations.FlatAppearance.BorderSize = 0;
+            this.btnVacations.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnVacations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVacations.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnVacations.Location = new System.Drawing.Point(3, 71);
+            this.btnVacations.Name = "btnVacations";
+            this.btnVacations.Size = new System.Drawing.Size(215, 28);
+            this.btnVacations.TabIndex = 17;
+            this.btnVacations.Text = "Должности";
+            this.btnVacations.UseVisualStyleBackColor = true;
+            this.btnVacations.Click += new System.EventHandler(this.btnVacations_Click);
+            // 
+            // btnWorkers
+            // 
+            this.btnWorkers.FlatAppearance.BorderSize = 0;
+            this.btnWorkers.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnWorkers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorkers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnWorkers.Location = new System.Drawing.Point(3, 37);
+            this.btnWorkers.Name = "btnWorkers";
+            this.btnWorkers.Size = new System.Drawing.Size(215, 28);
+            this.btnWorkers.TabIndex = 16;
+            this.btnWorkers.Text = "Работники";
+            this.btnWorkers.UseVisualStyleBackColor = true;
+            this.btnWorkers.Click += new System.EventHandler(this.btnWorkers_Click);
+            // 
+            // btnBus
+            // 
+            this.btnBus.FlatAppearance.BorderSize = 0;
+            this.btnBus.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnBus.Location = new System.Drawing.Point(3, 3);
+            this.btnBus.Name = "btnBus";
+            this.btnBus.Size = new System.Drawing.Size(215, 28);
+            this.btnBus.TabIndex = 15;
+            this.btnBus.Text = "Автобусы";
+            this.btnBus.UseVisualStyleBackColor = true;
+            this.btnBus.Click += new System.EventHandler(this.btnBus_Click);
             // 
             // dgvMain
             // 
@@ -394,63 +470,43 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMain.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMain.Location = new System.Drawing.Point(173, 26);
+            this.dgvMain.Location = new System.Drawing.Point(225, 25);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.ReadOnly = true;
             this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMain.Size = new System.Drawing.Size(612, 436);
+            this.dgvMain.Size = new System.Drawing.Size(878, 459);
             this.dgvMain.TabIndex = 3;
+            this.dgvMain.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellDoubleClick);
             this.dgvMain.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvMain_DataBindingComplete);
-            // 
-            // txtFind
-            // 
-            this.txtFind.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFind.Location = new System.Drawing.Point(606, 3);
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(179, 20);
-            this.txtFind.TabIndex = 4;
-            this.txtFind.TextChanged += new System.EventHandler(this.txtFind_TextChanged);
-            // 
-            // lblFind
-            // 
-            this.lblFind.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFind.AutoSize = true;
-            this.lblFind.Location = new System.Drawing.Point(562, 6);
-            this.lblFind.Name = "lblFind";
-            this.lblFind.Size = new System.Drawing.Size(38, 13);
-            this.lblFind.TabIndex = 5;
-            this.lblFind.Text = "Найти";
             // 
             // ds
             // 
             this.ds.DataSetName = "ds";
             this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // назначитьВодителяToolStripMenuItem
+            // btnTrackAccess
             // 
-            this.назначитьВодителяToolStripMenuItem.Name = "назначитьВодителяToolStripMenuItem";
-            this.назначитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.назначитьВодителяToolStripMenuItem.Text = "Назначить водителя";
-            this.назначитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.назначитьВодителяToolStripMenuItem_Click);
-            // 
-            // назначитьНаДолжностьToolStripMenuItem
-            // 
-            this.назначитьНаДолжностьToolStripMenuItem.Name = "назначитьНаДолжностьToolStripMenuItem";
-            this.назначитьНаДолжностьToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.назначитьНаДолжностьToolStripMenuItem.Text = "Назначить на должность";
-            this.назначитьНаДолжностьToolStripMenuItem.Click += new System.EventHandler(this.назначитьНаДолжностьToolStripMenuItem_Click);
+            this.btnTrackAccess.FlatAppearance.BorderSize = 0;
+            this.btnTrackAccess.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btnTrackAccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrackAccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnTrackAccess.Location = new System.Drawing.Point(3, 275);
+            this.btnTrackAccess.Name = "btnTrackAccess";
+            this.btnTrackAccess.Size = new System.Drawing.Size(215, 28);
+            this.btnTrackAccess.TabIndex = 24;
+            this.btnTrackAccess.Text = "Одобренные маршруты";
+            this.btnTrackAccess.UseVisualStyleBackColor = true;
+            this.btnTrackAccess.Click += new System.EventHandler(this.btnTrackAccess_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 462);
-            this.Controls.Add(this.lblFind);
-            this.Controls.Add(this.txtFind);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(1103, 485);
             this.Controls.Add(this.dgvMain);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.statusStrip);
@@ -458,11 +514,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Text = "Автопарк";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
-            this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             this.ResumeLayout(false);
@@ -481,26 +537,17 @@
         private System.Windows.Forms.ToolStripMenuItem toolbtnHelp;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.Panel pnlMenu;
-        private System.Windows.Forms.Label lblVacation;
-        private System.Windows.Forms.Label lblWorker;
-        private System.Windows.Forms.Label lblBus;
         private System.Windows.Forms.ToolStripMenuItem toolbtnWorker;
         private System.Windows.Forms.ToolStripMenuItem toolbtnVacation;
         private System.Windows.Forms.ToolStripMenuItem новыйМаршрутToolStripMenuItem;
         private ds ds;
         private System.Windows.Forms.ToolStripMenuItem новоеСервисноеОбслуживаниеToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtFind;
-        private System.Windows.Forms.Label lblFind;
         private System.Windows.Forms.DataGridView dgvMain;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem классическийToolStripMenuItem;
         public System.Windows.Forms.ToolStripSplitButton toolAdmin;
         private System.Windows.Forms.ToolStripMenuItem автобусыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem работникиToolStripMenuItem;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem должностиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem маршрутыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem тОToolStripMenuItem;
@@ -511,6 +558,17 @@
         private System.Windows.Forms.ToolStripMenuItem индиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem назначитьВодителяToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem назначитьНаДолжностьToolStripMenuItem;
+        private System.Windows.Forms.Button btnBus;
+        private System.Windows.Forms.Button btnWorkers;
+        private System.Windows.Forms.Button btnVacations;
+        private System.Windows.Forms.Button btnTrack;
+        private System.Windows.Forms.Button btnDrivers;
+        private System.Windows.Forms.Button btnOntheTrack;
+        private System.Windows.Forms.Button btnVacationTrue;
+        private System.Windows.Forms.Button btnTO;
+        private System.Windows.Forms.Button btnBusAccess;
+        private System.Windows.Forms.ToolStripTextBox txtFind;
+        private System.Windows.Forms.Button btnTrackAccess;
     }
 }
 

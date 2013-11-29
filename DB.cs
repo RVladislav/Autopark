@@ -27,6 +27,12 @@ namespace Autopark
             public int f5;
         }
 
+        public struct LinkDrtiverBus
+        {
+            public int f1;
+            public int f2;
+        }
+
         public struct LinkVacantion
         {
             public int f1;
@@ -83,6 +89,20 @@ namespace Autopark
             public string f4;
             public int f5;
             public bool f6;
+        }
+
+        public void Save(LinkDrtiverBus db)
+        {
+            using (OleDbConnection con = new OleDbConnection(connectionString))
+            {
+                OleDbCommand cmd = new OleDbCommand("AddWB", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@idW", db.f1);
+                cmd.Parameters.AddWithValue("@idV", db.f2);
+
+                RunQuery(con, cmd);
+            } 
         }
 
         public void Save(Fields_Bus fields)
