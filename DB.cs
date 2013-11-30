@@ -102,12 +102,12 @@ namespace Autopark
                 cmd.Parameters.AddWithValue("@idV", db.f2);
 
                 RunQuery(con, cmd);
-            } 
+            }
         }
 
         public void Save(Fields_Bus fields)
         {
-           using (OleDbConnection con = new OleDbConnection(connectionString))
+            using (OleDbConnection con = new OleDbConnection(connectionString))
             {
                 OleDbCommand cmd = new OleDbCommand("AddBus", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -119,7 +119,7 @@ namespace Autopark
                 cmd.Parameters.AddWithValue("@sits", fields.f5);
 
                 RunQuery(con, cmd);
-            } 
+            }
         }
 
         public void Save(Link_BusTrack bt)
@@ -234,7 +234,7 @@ namespace Autopark
                 cmd.Parameters.AddWithValue("@timeCreate", fields.f5);
                 cmd.Parameters.AddWithValue("@Done", fields.f6);
 
-                RunQuery(con, cmd);               
+                RunQuery(con, cmd);
 
             }
         }
@@ -244,7 +244,7 @@ namespace Autopark
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            con.Dispose(); 
+            con.Dispose();
         }
 
     }

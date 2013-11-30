@@ -73,13 +73,13 @@ namespace Autopark
             dgvMain.Columns[0].Visible = false;
         }
 
-   
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             frmWelcome frm = new frmWelcome();
             frm.ShowDialog();
             if (frm.DialogResult == DialogResult.OK) toolAdmin.Visible = true;
-            if (frm.DialogResult == DialogResult.Cancel) Application.Exit();
+            if (frm.DialogResult == DialogResult.Cancel) toolbtnEdit.Visible = false;
         }
 
         private void автобусыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace Autopark
 
         private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAdmin frm = new frmAdmin(); 
+            frmAdmin frm = new frmAdmin();
             dsTableAdapters.VacationTableAdapter ta = new dsTableAdapters.VacationTableAdapter();
             ta.Fill(ds.Vacation);
             frm.dgvAdmin.DataSource = ds.Vacation;
@@ -149,7 +149,7 @@ namespace Autopark
             frm.dgvAdmin.Update();
             frm.ShowDialog();
 
-            ta.Update(ds.Service);            
+            ta.Update(ds.Service);
         }
 
         private void автобусыМаршрутыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -204,8 +204,8 @@ namespace Autopark
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(toolAdmin.Visible==true)
-            MessageBox.Show("Режим администратора выключен", "Выход", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (toolAdmin.Visible == true)
+                MessageBox.Show("Режим администратора выключен", "Выход", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void dgvMain_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -420,10 +420,6 @@ namespace Autopark
 
             dgvMain.Update();
         }
-
-
-
-
 
 
     }

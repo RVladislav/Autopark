@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewWorker));
             this.label1 = new System.Windows.Forms.Label();
             this.txtFIO = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -281,6 +282,7 @@
             this.Controls.Add(this.txtFIO);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNewWorker";
             this.Text = "Новый работник";
             ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();

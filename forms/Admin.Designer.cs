@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
             this.dgvAdmin = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             this.ClientSize = new System.Drawing.Size(760, 460);
             this.Controls.Add(this.dgvAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAdmin";
             this.Text = "Администратор";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).EndInit();

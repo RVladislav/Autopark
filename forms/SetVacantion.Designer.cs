@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSetVacantion));
             this.cmbWorker = new System.Windows.Forms.ComboBox();
             this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ds = new Autopark.ds();
@@ -133,6 +134,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbWorker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSetVacantion";
             this.Text = "Должность";
             this.Load += new System.EventHandler(this.frmSetVacantion_Load);

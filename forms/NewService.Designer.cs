@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewService));
             this.lblBus = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.ds = new Autopark.ds();
@@ -256,6 +257,7 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblBus);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNewService";
             this.Text = "Новое техническое обслуживание";
             this.Load += new System.EventHandler(this.frmNewService_Load);

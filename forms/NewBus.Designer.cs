@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewBus));
             this.allDriversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ds = new Autopark.ds();
             this.lblTrack = new System.Windows.Forms.Label();
@@ -231,6 +232,7 @@
             this.Controls.Add(this.cmbTrack);
             this.Controls.Add(this.lblTrack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNewBus";
             this.Text = "Новый автобус";
             this.Load += new System.EventHandler(this.frmNewBus_Load);

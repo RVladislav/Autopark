@@ -221,7 +221,7 @@
             // toolbtnHelp
             // 
             this.toolbtnHelp.Name = "toolbtnHelp";
-            this.toolbtnHelp.Size = new System.Drawing.Size(152, 22);
+            this.toolbtnHelp.Size = new System.Drawing.Size(123, 22);
             this.toolbtnHelp.Text = "Помощь";
             this.toolbtnHelp.Click += new System.EventHandler(this.toolbtnHelp_Click);
             // 
